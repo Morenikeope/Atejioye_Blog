@@ -7,6 +7,8 @@ categories: [Report Draft]
 
 # **AI-Driven Housing Evaluation for Rural Community Development**
 
+![](/images/MicrosoftTeams-image (2).png){width="605"}
+
 ### **Introduction**
 
 The absence of a comprehensive and unbiased assessment of housing quality in rural communities poses challenges in identifying financing gaps and effectively allocating resources for housing improvement. Consequently, this hinders the overall well-being and health of residents, impacts workforce stability, diminishes rural vitality, and undermines the economic growth of Iowa. Moreover, the subjective nature of evaluating existing housing conditions and the limited availability of resources for thorough investigations further compound the problem. To address these challenges, there is a pressing need for an Artificial Intelligence (AI) driven approach that can provide a more accurate and objective evaluation of housing quality, identify financing gaps, and optimize the allocation of local, state, and federal funds to maximize community benefits.
