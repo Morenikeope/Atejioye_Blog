@@ -2,12 +2,14 @@
   {
     "listing": "/blog 2.html",
     "items": [
+      "/posts/Report_Draft/Report_Draft.html",
       "/posts/Week_One/Week_One_Practice.html"
     ]
   },
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/Report_Draft/Report_Draft.html",
       "/posts/Week_One/Week_One_Practice.html"
     ]
   }
