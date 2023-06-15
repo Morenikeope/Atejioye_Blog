@@ -53,7 +53,7 @@ Beacon Schneider: Slater, New Hampton, and Grundy Center
 
 We have obtained house images from the mentioned websites. Our focus is on four communities: Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners pay Google to have their residences intentionally blurred on Google Street View.
 
-![](https://lh4.googleusercontent.com/XA5XLOcshhmEb6m1mDFeNpd26Elgv_akleaQR29VPIsiz7u1gCU43afypzU2whtVL_Oc5QP9P7fnDdFk0HFo8xJtqANz5xGVF8r9HONESHBepwbuovhvbnlI7OP4B8Ws5yZfIg7mC0DchTaT_Z2f-KA)
+![](/images/MicrosoftTeams-image (1).png)
 
 To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,
 
