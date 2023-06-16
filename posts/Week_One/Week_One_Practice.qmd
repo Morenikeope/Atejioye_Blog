@@ -7,10 +7,6 @@ categories: [Progress Report]
 
 ## Housing Project Progress Report (Year 1)
 
-The absence of a comprehensive and unbiased assessment of housing quality in rural communities poses challenges in identifying financing gaps and effectively allocating resources for housing improvement. Consequently, this hinders the overall well-being and health of residents, impacts workforce stability, diminishes rural vitality, and undermines the economic growth of Iowa (not sure if it should be specific to Iowa). Moreover, the subjective nature of evaluating existing housing conditions and the limited availability of resources for thorough investigations further compound the problem. To address these challenges, there is a pressing need for an AI-driven approach that can provide a more accurate and objective evaluation of housing quality, identify financing gaps, and optimize the allocation of local, state, and federal funds to maximize community benefits.
-
-Utilizing web scraping techniques to collect images of houses from various assessor websites, an AI model can be developed to analyze and categorize housing features into good or poor quality. This can enable targeted investment strategies. It allows for the identification of houses in need of improvement and determines the areas where financial resources should be directed. By leveraging AI technology in this manner, the project seeks to streamline the housing evaluation process, eliminate subjective biases, and facilitate informed decision-making for housing investment and development initiatives in rural communities.
-
 The project's initial phase involved establishing objectives that were aimed to be achieved. These include;
 
 1.  Using data to find good study cities;
@@ -53,7 +49,7 @@ Beacon Schneider: Slater, New Hampton, and Grundy Center
 
 We have obtained house images from the mentioned websites. Our focus is on four communities: Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners pay Google to have their residences intentionally blurred on Google Street View.
 
-![](/images/MicrosoftTeams-image (1).png){width="397"}
+![](/images/MicrosoftTeams-image%20(1).png){width="397"}
 
 To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,
 

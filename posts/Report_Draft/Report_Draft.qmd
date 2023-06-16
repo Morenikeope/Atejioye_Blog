@@ -9,7 +9,7 @@ categories: [Report Draft]
 
 ------------------------------------------------------------------------
 
-![](/images/MicrosoftTeams-image (2).png){width="620"}
+![](/images/MicrosoftTeams-image%20(2).png){width="620"}
 
 ------------------------------------------------------------------------
 
@@ -29,9 +29,8 @@ Objectives:
 
 -   Explore the industries located in the communities and analyze agricultural census data to understand land ownership characteristics.
 
-```{=html}
 <!-- -->
-```
+
 -   Conduct a literature review to examine examples of AI applications in planning and housing.
 
 -   Collect housing data, including images, from existing sources such as Google Streets and county assessor websites.
