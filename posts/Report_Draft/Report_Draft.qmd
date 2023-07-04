@@ -94,7 +94,15 @@ Based on the WINVEST project, the team decided to work with the communities of G
 
 Using the infographics feature on ArcGIS Pro, we created community summary for each community.
 
-![](/images/grundy_center_community_summary (1).pdf)
+![](/images/Iowa_community_summary.pdf){width="70%"}
+
+![](/images/grundy_center_community_summary (1).pdf){width="70%"}
+
+![](/images/independence_community_summary.pdf){width="70%"}
+
+![](/images/new_hampton_community_summary.pdf){width="70%"}
+
+To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday) for a guide.
 
 More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;
 
@@ -104,3 +112,45 @@ More demographic analysis was done to determine which communities in Iowa could 
 -   Stable, shrinking or increasing population
 -   Presence of a school
 -   Communities with growing income base
+
+*Include a link to Tableau dashboard here for the demographic analysis.*
+
+Using R, the following graphs was created.
+
+![](/images/GPopulationChange.png){width="410"}
+
+![](/images/GPopProjections.png){width="410"}
+
+![](/images/GMedIncome.png){width="410"}
+
+![](/images/GMedianHomeValue.png){width="410"}
+
+![](/images/GMedHouseValue.png){width="410"}
+
+![](/images/GMedIncome2009.png){width="410"}
+
+![](/images/GYearBuilt.png){width="410"}
+
+#### Data source
+
+-   2000 - 2020 Decennial Census
+-   2021 5-Year American Community Survey
+-   Additional sources can be found [here](https://lehd.ces.census.gov/data/) and [here](https://data.iowa.gov/Local-Government-Finance/Taxable-Property-Values-in-Iowa-by-Tax-District-an/ig9g-pba5).
+
+## Geographic Analysis
+
+One objective that was later included in the project was using map to display AI-model output fo vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
+
+To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/).
+
+More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html).
+
+We later realized we can use Tableau for better data connections and visualizations. *This is ongoing.*
+
+## Workflow
+
+The image below depicts our project plan outlining the strategies and actions we undertook to accomplish our objectives.
+
+![](/images/DSPG project plan.png){width="594"}
+
+## AI Models
