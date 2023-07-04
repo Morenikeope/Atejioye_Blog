@@ -1,7 +1,7 @@
 ---
 title: "Housing Project Report"
-author: "Morenike Atejioye"
-date: "2023-06-15"
+author: "AI Housing Team"
+date: "2023-07-04"
 categories: [Report Draft]
 ---
 
@@ -9,27 +9,25 @@ categories: [Report Draft]
 
 ------------------------------------------------------------------------
 
-![](/images/MicrosoftTeams-image%20(2).png){width="620"}
+![](/images/MicrosoftTeams-image (1) 2.png)
 
 ------------------------------------------------------------------------
 
-### **Introduction**
+## **Introduction**
 
-The absence of a comprehensive and unbiased assessment of housing quality in rural communities poses challenges in identifying financing gaps and effectively allocating resources for housing improvement. Consequently, this hinders the overall well-being and health of residents, impacts workforce stability, diminishes rural vitality, and undermines the economic growth of Iowa. Moreover, the subjective nature of evaluating existing housing conditions and the limited availability of resources for thorough investigations further compound the problem. To address these challenges, there is a pressing need for an Artificial Intelligence (AI) driven approach that can provide a more accurate and objective evaluation of housing quality, identify financing gaps, and optimize the allocation of local, state, and federal funds to maximize community benefits.
+In rural Midwestern communities, the presence of high-quality and affordable housing plays a crucial role in preserving a good quality of life and fostering the vitality of the region, particularly for individuals involved in agriculture. However, measuring the condition of housing in rural communities can be a complex and subjective task. To address these challenges, there is a pressing need for an Artificial Intelligence (AI) driven approach that can provide a more accurate and objective evaluation of housing quality, identify financing gaps, and optimize the allocation of local, state, and federal funds to maximize community benefits.
 
 Utilizing web scraping techniques to collect images of houses from various assessor websites, an AI model can be developed to analyze and categorize housing features into good or poor quality. This can enable targeted investment strategies. It allows for the identification of houses in need of improvement and determines the areas where financial resources should be directed. By leveraging AI technology in this manner, the project seeks to streamline the housing evaluation process, eliminate subjective biases, and facilitate informed decision-making for housing investment and development initiatives in rural communities.
 
-### **Goal and Objectives**
+## **Goal and Objectives**
 
 The goal of the project is to investigate the condition of existing housing stock in rural Midwestern communities and develop a thorough and objective evaluation of housing quality using AI.
 
 Objectives:
 
--   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and mean age of residents.
+-   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and median age of residents.
 
 -   Explore the industries located in the communities and analyze agricultural census data to understand land ownership characteristics.
-
-<!-- -->
 
 -   Conduct a literature review to examine examples of AI applications in planning and housing.
 
@@ -39,14 +37,70 @@ Objectives:
 
 -   Assess the results and refine selection criteria for Year 2 of the project, considering the insights gained and community input received.
 
-### **Literature Review**
+## **Literature Review**
 
 An important objective of the AI-Driven Housing Evaluation for Rural Community Development project was its focus on reviewing as much accessible literature and websites. Review of how cities have been using AI to address problems, and specifically housing problems, and how counties or cities assess housing conditions.
 
-1.  Ames city housing inspection
+1.  **Ames City Housing Inspection**
 
 In the context of housing inspections, the City of Ames in Iowa has implemented a comprehensive housing inspection program to ensure housing quality and safety standards are met. The Ames City Housing Inspection program focuses on various aspects of housing conditions, including grass height, weeds, trees, refuse-garbage, sidewalks, deck/porch, gutters, paint, roof, windows, structural foundation, and graffiti (City of Ames, 2021). This program serves as a valuable reference for evaluating and assessing housing quality in the rural context, particularly in the Iowa region. However, despite the efforts made by programs like the Ames City Housing Inspection, the subjective nature of evaluating existing housing conditions and the limited availability of resources for thorough investigations still pose challenges.
 
-<https://www.cityofames.org/home/showpublisheddocument/53168/637087226539170000> 
+Click [here](https://www.cityofames.org/home/showpublisheddocument/53168/637087226539170000){.uri} and [here](https://jse.amstat.org/v19n3/decock/DataDocumentation.txt){.uri} to read more.
 
-<https://jse.amstat.org/v19n3/decock/DataDocumentation.txt>
+2.  **U.S Department of Housing and Urban Development** 
+
+The U.S. Department of Housing and Urban Development (HUD) plays a vital role in ensuring housing quality standards across the United States. In their assessment of housing quality, HUD examines various aspects of the building exterior, including the condition of the foundation, stairs, rails, porches, roof, gutters, exterior surfaces, and chimney. Additionally, HUD emphasizes the importance of evaluating lead-based paint on exterior surfaces to ensure the safety and well-being of residents. These guidelines provided by HUD serve as a valuable reference for assessing and maintaining housing quality standards, contributing to the overall improvement of housing conditions nationwide. 
+
+Read more [here](https://www.hud.gov/sites/dfiles/OCHCO/documents/52580A.PDF).
+
+3.  **Orange County minimum housing code**  
+
+The Orange County minimum housing code plays a crucial role in ensuring housing standards and safety within the county. As outlined in Section 20-34 of the code, specific requirements include the maintenance of a safe foundation, stairs, walls, roofs, and porches. The code also addresses concerns such as high weeds and dilapidated vehicles, which can impact the overall quality of housing in the area. 
+
+Read more [here](https://library.municode.com/nc/orange_county/codes/code_of_ordinances?nodeId=PTIGEOR_CH20HO_ARTIIMIHOST).
+
+4.  In Detroit, **150 residents were tasked** with surveying vacant land across the city that could be used. According to [Data-Smart City Solutions](https://datasmart.ash.harvard.edu/news/article/battling-blight-four-ways-cities-are-using-data-to-address-vacant-propertie), part of Harvard University, around 40,000 properties were found to be blighted and were subsequently given priority for either demolition or remediation. 
+
+```{=html}
+<!-- -->
+```
+5.  [RoadBotics](https://www.roadbotics.com/?utm_medium=cpc&utm_source=google&utm_campaign=branded&utm_source=adwords&utm_campaign=Branded+Campaign&utm_medium=ppc&utm_term=roadbotics&hsa_kw=roadbotics&hsa_mt=b&hsa_tgt=kwd-658344954874&hsa_src=g&hsa_ad=510451969344&hsa_ver=3&hsa_cam=11499221743&hsa_net=adwords&hsa_acc=7376995993&hsa_grp=117545396612&gclid=CjwKCAjwvdajBhBEEiwAeMh1U0RpzXvjNEWuMpPPRlyQl9AVaycxM1copJ8x5ThJ3lr_U3IC5caGqhoCDbkQAvD_BwE) 
+
+RoadBotics has developed a technology using artificial intelligence that has the ability to analyze road imagery to then assess issues and produce cost effective solutions. This allows cities to know when and where repairs need to take place, and deal with them while saving money. This type of technology also improves safety within cities as problems will not go unnoticed. 
+
+Read more [here](https://www.roadbotics.com/roadway-tutorial/). 
+
+6.  [Mason City](https://www.masoncityassessor.net/) **Assessment**
+
+According to Tara Brueggeman, an Assessor for Mason City, data is primarily sourced from publicly available platforms such as Beacon and the Vanguard assessment data management system. While web scraping is not feasible, city and county assessor offices can generate customized reports using SQL from Vanguard.
+
+During the appraisal process, appraisers rely on blueprints for property details and conduct in-person visits to measure and inspect properties. Interior inspections are now limited due to homeowner preferences, but the condition of the exterior serves as a valuable indicator. To minimize bias, appraisers adhere to guidelines outlined in the Iowa Real Property appraisal manual, avoid assessments during unfavorable personal circumstances, and undergo a review process by another individual before finalizing assessment records. These efforts contribute to the objectivity and accuracy of property assessments in Mason City.
+
+7.  **Des Moines Neighborhood Revitalization Program**
+
+The Des Moines Revitalization program is pioneering a groundbreaking approach to assess housing conditions through the utilization of AI. With the aim of revitalizing the city's housing stock, this innovative program leverages AI technology to objectively evaluate the condition of homes in Des Moines. By analyzing various data points, including structural features, maintenance history, and overall quality, the AI system provides a comprehensive assessment of each property. This data-driven approach allows the program to identify areas in need of improvement, prioritize revitalization efforts, and allocate resources effectively.
+
+Read more [here](https://www.desmoinesregister.com/story/news/local/des-moines/2023/03/08/des-moines-wonders-if-a-machine-can-better-assess-home-conditions/69965121007/?utm_source=ground.news&utm_medium=referral) and [here](https://www.axios.com/local/des-moines/2023/03/10/ai-assessment-desmoines-properties-iowa).
+
+## Demographic Analysis
+
+Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.
+
+-   Home ownership rate
+-   Population change
+-   Median household income
+-   Age of houses
+-   Median house values
+
+Using the infographics feature on ArcGIS Pro, we created community summary for each community.
+
+![](/images/grundy_center_community_summary (1).pdf)
+
+More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;
+
+-   Local spending pattern
+-   Median age of residents
+-   Population between 500 and 10,000
+-   Stable, shrinking or increasing population
+-   Presence of a school
+-   Communities with growing income base
