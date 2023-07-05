@@ -9,7 +9,7 @@ categories: [Report Draft]
 
 ------------------------------------------------------------------------
 
-![](/images/MicrosoftTeams-image (1) 2.png)
+![](/images/MicrosoftTeams-image%20(1)%202.png)
 
 ------------------------------------------------------------------------
 
@@ -59,11 +59,7 @@ The Orange County minimum housing code plays a crucial role in ensuring housing 
 
 Read more [here](https://library.municode.com/nc/orange_county/codes/code_of_ordinances?nodeId=PTIGEOR_CH20HO_ARTIIMIHOST).
 
-4.  In Detroit, **150 residents were tasked** with surveying vacant land across the city that could be used. According to [Data-Smart City Solutions](https://datasmart.ash.harvard.edu/news/article/battling-blight-four-ways-cities-are-using-data-to-address-vacant-propertie), part of Harvard University, around 40,000 properties were found to be blighted and were subsequently given priority for either demolition or remediation. 
-
-```{=html}
-<!-- -->
-```
+4.  In Detroit, **150 residents were tasked** with surveying vacant land across the city that could be used. According to [Data-Smart City Solutions](https://datasmart.ash.harvard.edu/news/article/battling-blight-four-ways-cities-are-using-data-to-address-vacant-propertie), part of Harvard University, around 40,000 properties were found to be blighted and were subsequently given priority for either demolition or remediation.
 5.  [RoadBotics](https://www.roadbotics.com/?utm_medium=cpc&utm_source=google&utm_campaign=branded&utm_source=adwords&utm_campaign=Branded+Campaign&utm_medium=ppc&utm_term=roadbotics&hsa_kw=roadbotics&hsa_mt=b&hsa_tgt=kwd-658344954874&hsa_src=g&hsa_ad=510451969344&hsa_ver=3&hsa_cam=11499221743&hsa_net=adwords&hsa_acc=7376995993&hsa_grp=117545396612&gclid=CjwKCAjwvdajBhBEEiwAeMh1U0RpzXvjNEWuMpPPRlyQl9AVaycxM1copJ8x5ThJ3lr_U3IC5caGqhoCDbkQAvD_BwE) 
 
 RoadBotics has developed a technology using artificial intelligence that has the ability to analyze road imagery to then assess issues and produce cost effective solutions. This allows cities to know when and where repairs need to take place, and deal with them while saving money. This type of technology also improves safety within cities as problems will not go unnoticed. 
@@ -96,7 +92,7 @@ Using the infographics feature on ArcGIS Pro, we created community summary of Io
 
 ![](/images/Iowa_community_summary.png){width="703"}
 
-![](/images/grundy_center_community_summary (1).png){width="703"}
+![](/images/grundy_center_community_summary%20(1).png){width="703"}
 
 ![](/images/independence_community_summary.png){width="703"}
 
@@ -151,7 +147,7 @@ We later realized we can use Tableau for better data connections and visualizati
 
 The image below depicts our project plan outlining the strategies and actions we undertook to accomplish our objectives.
 
-![](/images/DSPG project plan.png){width="594"}
+![](/images/DSPG%20project%20plan.png){width="594"}
 
 ## Web Scraping
 

@@ -1,12 +1,13 @@
 ---
-title: "A Blog on Professional Contributions"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+      - icon: github
+        href: https://github.com/Morenikeope
+      - icon: linkedin
+        href: https://www.linkedin.com/in/morenike-atejioye/
 ---
+
+This blog serves as a platform where I document my experiences and achievements during my participation in the DSPG summer program. Through this personal blog, I aim to showcase my notable contributions and delve into the impactful work I have undertaken in the program.
