@@ -153,4 +153,8 @@ The image below depicts our project plan outlining the strategies and actions we
 
 ![](/images/DSPG project plan.png){width="594"}
 
+## Web Scraping
+
 ## AI Models
+
+[Gavin DSPG](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html)
