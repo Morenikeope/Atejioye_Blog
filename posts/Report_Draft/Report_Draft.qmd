@@ -1,7 +1,7 @@
 ---
 title: "Housing Project Report"
 author: "AI Housing Team"
-date: "2023-07-04"
+date: "2023-07-05"
 categories: [Report Draft]
 ---
 
@@ -151,7 +151,7 @@ Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHou
 
 The image below depicts our project plan, outlining the strategies and actions we undertook to accomplish our objectives. The strategies include image gathering / data collection, creating a database and building AI models.
 
-![](/images/DSPG%20project%20plan.png){width="594"}
+![](/images/DSPG%20project%20plan.png){width="610"}
 
 ## Data Collection
 
@@ -209,6 +209,8 @@ During the data collection process, we encountered \"address\" inconsistencies i
 To learn about the web scraping techniques used for this project, click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html).
 
 ## AI Models
+
+![](/images/MicrosoftTeams-image.png){width="603"}
 
 [Gavin DSPG](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html)
 
