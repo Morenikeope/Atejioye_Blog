@@ -162,12 +162,13 @@ At first, we gathered house images through manual means, amassing a total of app
 We planned to collect house images from the following websites;
 
 -   Zillow
+-   Trulia
 -   Realtors.com
 -   County Assessor Pages
 -   Vanguard
--   Beacon
+-   Beacon by Schneider Geospatial
 
-The Beacon website implemented restrictions that prohibit web scraping activities on their platform.
+The Beacon website implemented restrictions that prohibit web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.
 
 We resolved to web scraping from the following websites;
 
