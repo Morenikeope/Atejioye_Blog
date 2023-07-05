@@ -113,19 +113,19 @@ More demographic analysis was done to determine which communities in Iowa could 
 
 Using R, the following graphs was created.
 
-![](/images/GPopulationChange.png){width="410"}
+![](/images/GPopulationChange.png){width="452"}
 
-![](/images/GPopProjections.png){width="410"}
+![](/images/GPopProjections.png){width="452"}
 
-![](/images/GMedIncome.png){width="410"}
+![](/images/GMedIncome.png){width="452"}
 
-![](/images/GMedianHomeValue.png){width="410"}
+![](/images/GMedianHomeValue.png){width="452"}
 
-![](/images/GMedHouseValue.png){width="410"}
+![](/images/GMedHouseValue.png){width="452"}
 
-![](/images/GMedIncome2009.png){width="410"}
+![](/images/GMedIncome2009.png){width="452"}
 
-![](/images/GYearBuilt.png){width="410"}
+![](/images/GYearBuilt.png){width="452"}
 
 #### Data source
 
@@ -135,22 +135,82 @@ Using R, the following graphs was created.
 
 ## Geographic Analysis
 
-One objective that was later included in the project was using map to display AI-model output fo vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
+One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
 
 To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/).
 
-More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html).
+More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping).
 
-We later realized we can use Tableau for better data connections and visualizations. *This is ongoing.*
+![](/images/ogden_siding_dashboard.png)
+
+We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.
+
+Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html) for more information.
 
 ## Workflow
 
-The image below depicts our project plan outlining the strategies and actions we undertook to accomplish our objectives.
+The image below depicts our project plan, outlining the strategies and actions we undertook to accomplish our objectives. The strategies include image gathering / data collection, creating a database and building AI models.
 
 ![](/images/DSPG%20project%20plan.png){width="594"}
 
-## Web Scraping
+## Data Collection
+
+At first, we gathered house images through manual means, amassing a total of approximately 3000 images. However, recognizing the need for a more efficient approach to image collection, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
+
+### Web Scraping
+
+We planned to collect house images from the following websites;
+
+-   Zillow
+-   Realtors.com
+-   County Assessor Pages
+-   Vanguard
+-   Beacon
+
+The Beacon website implemented restrictions that prohibit web scraping activities on their platform.
+
+We resolved to web scraping from the following websites;
+
+-   Zillow
+-   Google Street View
+-   Vanguard
+
+Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.
+
+![](/images/MicrosoftTeams-image (1).png){width="452"}
+
+To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,
+
+-   Zillow
+-   New Hampton, Iowa
+-   311 W Main St
+
+**Result**: Z_H_311 W MAIN ST
+
+Z - Zillow
+
+G - Google
+
+V - Vanguard
+
+B - Beacon
+
+S - Slater
+
+H - New Hampton
+
+D - Independence
+
+G - Grundy Center
+
+During the data collection process, we encountered \"address\" inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2. Fortunately, the function used to retrieve Google images managed to run successfully, although it reported 50 errors related to these address variations, including both the dual house numbers and the presence of half signs. It is worth noting that even if one of the address numbers is removed or the 1/2 is eliminated (essentially removing the \"/\" sign), the image URL still leads to a valid Google image. In order to address this issue, it is possible to revisit the URLs and modify them to obtain images corresponding to these specific addresses, if necessary.
+
+To learn about the web scraping techniques used for this project, click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html).
 
 ## AI Models
 
 [Gavin DSPG](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html)
+
+## Conclusion
+
+## Recommendation

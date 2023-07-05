@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Morenike Atejioye DSPG"
+  title: "Home"
   description: "This blog serves as a platform where I document my experiences and achievements during my participation in the DSPG summer program. Through this personal blog, I aim to showcase my notable contributions and delve into the impactful work I have undertaken in the program."
   navbar:
     right:
