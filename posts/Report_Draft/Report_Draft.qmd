@@ -92,15 +92,15 @@ Based on the WINVEST project, the team decided to work with the communities of G
 -   Age of houses
 -   Median house values
 
-Using the infographics feature on ArcGIS Pro, we created community summary for each community.
+Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.
 
-![](/images/Iowa_community_summary.pdf){width="70%"}
+![](/images/Iowa_community_summary.png){width="703"}
 
-![](/images/grundy_center_community_summary (1).pdf){width="70%"}
+![](/images/grundy_center_community_summary (1).png){width="703"}
 
-![](/images/independence_community_summary.pdf){width="70%"}
+![](/images/independence_community_summary.png){width="703"}
 
-![](/images/new_hampton_community_summary.pdf){width="70%"}
+![](/images/new_hampton_community_summary.png){width="703"}
 
 To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday) for a guide.
 
