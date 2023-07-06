@@ -3,6 +3,7 @@ title: "Housing Project Report"
 author: "AI Housing Team"
 date: "2023-07-05"
 categories: [Report Draft]
+toc: TRUE
 ---
 
 # **AI-Driven Housing Evaluation for Rural Community Development**
@@ -177,6 +178,7 @@ We resolved to web scraping from the following websites;
 -   Zillow
 -   Google Street View
 -   Vanguard
+-   Beacon
 
 Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.
 
@@ -224,23 +226,23 @@ To learn about the web scraping techniques used for this project, click [here](h
 
     \# Ogden
 
-    og_data \<- read.csv(\"\~/GitHub/Housing/complete links/ogden_urls.csv\")
+    og_data \<- read.csv("\~/GitHub/Housing/complete links/ogden_urls.csv")
 
     urls_start \<- og_data\[, 1\]
 
-    urls_full \<- paste(urls_start, \"&key=\", sep = \"\")
+    urls_full \<- paste(urls_start, "&key=", sep = "")
 
-    urls_full_api_key \<- paste(urls_full, api_key, sep = \"\")
+    urls_full_api_key \<- paste(urls_full, api_key, sep = "")
 
     \# creates folder and downloads all images
 
-    dir.create(\"ogden_google_images_folder\")
+    dir.create("ogden_google_images_folder")
 
     for(i in seq_along(urls_full_api_key)) {
 
-    \_\_\_ file_path \<- file.path(\"ogden_google_images_folder\", paste0(\"G_OG\_\", og_data\[i,6\], \"\_.png\"))
+    \_\_\_ file_path \<- file.path("ogden_google_images_folder", paste0("G_OG\_", og_data\[i,6\], "\_.png"))
 
-    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = \"wb\")
+    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = "wb")
 
     \_\_\_ print(file_path)
 
@@ -252,19 +254,19 @@ To learn about the web scraping techniques used for this project, click [here](h
 
 ![](/images/MicrosoftTeams-image.png){width="603"}
 
-Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
+#### Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
 
-Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
+#### Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
 
-Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
+#### Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
 
-Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
+#### Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
 
-Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
+#### Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
 
-Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
+#### Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
 
-Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
+#### Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
 ## Conclusion
 
