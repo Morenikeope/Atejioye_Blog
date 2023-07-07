@@ -93,11 +93,19 @@ Based on the WINVEST project, the team decided to work with the communities of G
 
 Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.
 
+**Iowa State**
+
 ![](/images/Iowa_community_summary.png){width="703"}
+
+**Grundy Center**
 
 ![](/images/grundy_center_community_summary%20(1).png){width="703"}
 
+**Independence**
+
 ![](/images/independence_community_summary.png){width="703"}
+
+**New Hampton**
 
 ![](/images/new_hampton_community_summary.png){width="703"}
 
@@ -112,9 +120,7 @@ More demographic analysis was done to determine which communities in Iowa could 
 -   Presence of a school
 -   Communities with growing income base
 
-*Include a link to Tableau dashboard here for the demographic analysis.*
-
-Using R, the following graphs was created.
+Using TidyVerse in R, the following graphs was created.
 
 ![](/images/GPopulationChange.png){width="452"}
 
@@ -129,12 +135,6 @@ Using R, the following graphs was created.
 ![](/images/GMedIncome2009.png){width="452"}
 
 ![](/images/GYearBuilt.png){width="452"}
-
-#### Data source
-
--   2000 - 2020 Decennial Census
--   2021 5-Year American Community Survey
--   Additional sources can be found [here](https://lehd.ces.census.gov/data/){target="_blank"} and [here](https://data.iowa.gov/Local-Government-Finance/Taxable-Property-Values-in-Iowa-by-Tax-District-an/ig9g-pba5){target="_blank"}.
 
 ## Geographic Analysis
 
@@ -188,7 +188,7 @@ We resolved to web scraping from the following websites;
 
 Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.
 
-![](/images/MicrosoftTeams-image%20(1).png){width="452"}
+![](/images/MicrosoftTeams-image%20(1).png){width="436"}
 
 To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,
 
@@ -218,7 +218,7 @@ During the data collection process, we encountered "address" inconsistencies in 
 
 To learn about the web scraping techniques used for this project, click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html){target="_blank"}.
 
-#### **How to Collect Addresses and Images**
+### **Collecting Addresses and Images**
 
 -   Address Collection and Cleaning **-** [Address Collection](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}
 
@@ -277,3 +277,13 @@ Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfi
 ## Conclusion
 
 ## Recommendation
+
+Spider for web scraping
+
+More training data
+
+## Data source
+
+-   2000 - 2020 Decennial Census
+-   2021 5-Year American Community Survey
+-   Additional sources can be found [here](https://lehd.ces.census.gov/data/){target="_blank"} and [here](https://data.iowa.gov/Local-Government-Finance/Taxable-Property-Values-in-Iowa-by-Tax-District-an/ig9g-pba5){target="_blank"}.
