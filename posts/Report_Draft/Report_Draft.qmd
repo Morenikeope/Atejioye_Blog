@@ -150,6 +150,12 @@ We later realized we can use Tableau for better data connections and visualizati
 
 Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html){target="_blank"} for more information.
 
+### Tableau Dashboard
+
+![](/images/Screen%20Shot%202023-07-06%20at%209.55.27%20PM.png)
+
+#### [Tableau Dashboard](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html){target="_blank"}
+
 ## Workflow
 
 The image below depicts our project plan, outlining the strategies and actions we undertook to accomplish our objectives. The strategies include image gathering / data collection, creating a database and building AI models.
@@ -254,19 +260,19 @@ To learn about the web scraping techniques used for this project, click [here](h
 
 ![](/images/MicrosoftTeams-image.png){width="603"}
 
-#### Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
+Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
 
-#### Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
+Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
 
-#### Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
+Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
 
-#### Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
+Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
 
-#### Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
+Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
 
-#### Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
+Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
 
-#### Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
+Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
 ## Conclusion
 
