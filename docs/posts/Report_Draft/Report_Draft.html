@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#ai-models" id="toc-ai-models" class="nav-link" data-scroll-target="#ai-models">AI Models</a>
   <ul class="collapse">
-  <li><a href="#confidence-level" id="toc-confidence-level" class="nav-link" data-scroll-target="#confidence-level">Confidence Level</a></li>
+  <li><a href="#confidence-level-and-accuracy" id="toc-confidence-level-and-accuracy" class="nav-link" data-scroll-target="#confidence-level-and-accuracy">Confidence Level and Accuracy</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 <p>At first, we gathered house images through manually, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
 <section id="web-scraping" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
-<p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching.</p>
+<p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.</p>
 <p><img src="../../images/zillow.png" class="img-fluid"></p>
 <p>We planned to collect house images from the following websites;</p>
 <ul>
@@ -412,15 +412,15 @@ ___ print(i)
 <p>Training the Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model" target="_blank">Model Training</a></p>
 <p>Utilizing a Trained AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model" target="_blank">Utilizing AI Model</a></p>
 <p>Exporting Predictions to a CSV on Address - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address" target="_blank">Export Predictions</a></p>
-<section id="confidence-level" class="level3">
-<h3 class="anchored" data-anchor-id="confidence-level">Confidence Level</h3>
+<section id="confidence-level-and-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="confidence-level-and-accuracy">Confidence Level and Accuracy</h3>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.6%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.2%;justify-content: center;">
 <p><img src="../../images/confidence3.png" class="img-fluid" width="445"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 49.4%;justify-content: center;">
-<p><img src="../../images/confidence2.png" class="img-fluid" width="434"></p>
+<div class="quarto-layout-cell" style="flex-basis: 49.8%;justify-content: center;">
+<p><img src="../../images/confidence_new.png" class="img-fluid" width="441"></p>
 </div>
 </div>
 </div>
@@ -436,7 +436,6 @@ ___ print(i)
 <p>Getting more images that show poor quality of housing for training data</p>
 <p>Working with Beacon - there is a limit - don’t do it!</p>
 <p>Date of the google images - how to access the date</p>
-<p>once you have</p>
 </section>
 <section id="data-source" class="level2">
 <h2 class="anchored" data-anchor-id="data-source">Data source</h2>

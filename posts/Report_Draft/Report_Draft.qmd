@@ -311,12 +311,12 @@ Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io
 
 Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
-### Confidence Level
+### Confidence Level and Accuracy
 
 ::: {layout-ncol="2"}
 ![](/images/confidence3.png){width="445"}
 
-![](/images/confidence2.png){width="434"}
+![](/images/confidence_new.png){width="441"}
 :::
 
 ## Conclusion
