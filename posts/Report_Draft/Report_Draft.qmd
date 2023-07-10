@@ -177,12 +177,12 @@ At first, we gathered house images through manual means, amassing a total of app
 
 We planned to collect house images from the following websites;
 
--   Zillow
--   Trulia
--   Realtors.com
--   County Assessor Pages
--   Vanguard
--   Beacon by Schneider Geospatial
+-   [Zillow](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169|65545421228|aud-352785741564:kwd-570802407|603457706088|&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE)
+-   [Trulia](https://www.trulia.com/)
+-   [realtor.com](https://www.realtor.com/)
+-   County Assessor Websites
+-   [Vanguard](https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&gclsrc=aw.ds)
+-   [Beacon](https://beacon.schneidercorp.com/) by Schneider Geospatial
 
 The Beacon website implemented restrictions that prohibit web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.
 
@@ -196,6 +196,8 @@ We resolved to web scraping from the following websites;
 Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.
 
 ![](/images/MicrosoftTeams-image%20(1).png){width="436"}
+
+### Naming Convention
 
 To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,
 
@@ -293,4 +295,8 @@ More training data
 
 -   2000 - 2020 Decennial Census
 -   2021 5-Year American Community Survey
+-   Zillow
+-   Google Street View
+-   Vanguard
+-   Beacon
 -   Additional sources can be found [here](https://lehd.ces.census.gov/data/){target="_blank"} and [here](https://data.iowa.gov/Local-Government-Finance/Taxable-Property-Values-in-Iowa-by-Tax-District-an/ig9g-pba5){target="_blank"}.
