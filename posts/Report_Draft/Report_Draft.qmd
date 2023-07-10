@@ -40,7 +40,7 @@ The goal of the project is to investigate the condition of existing housing stoc
 
 ## **Literature Review**
 
-An important objective of the project was its focus on reviewing as much accessible literature and websites. Review of how cities have been using AI to address problems, and specifically housing problems, and how counties or cities assess housing conditions.
+An important objective of the project was its focus on reviewing as much accessible literature and websites. Review of how cities have been using AI to address problems, and specifically housing problems, and how counties or cities assess housing conditions. The section also answers the question, what data might we use to assess housing condition in this project?
 
 1.  **Ames City Housing Inspection**
 
@@ -145,7 +145,7 @@ Using TidyVerse in R, the following graphs was created.
 
 ## Geographic Analysis
 
-One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
+One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
 
 To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
 
@@ -178,11 +178,28 @@ At first, we gathered house images through manual means, amassing a total of app
 We planned to collect house images from the following websites;
 
 -   [Zillow](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169|65545421228|aud-352785741564:kwd-570802407|603457706088|&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE)
+
+    Zillow is an online platform and app for real estate that allows users to search for homes, view property listings, and access data on home values and market trends.
+
 -   [Trulia](https://www.trulia.com/)
+
+    Trulia is another online platform and app for real estate that helps users find homes, apartments, and other property listings, and provides information on neighborhoods and market trends.
+
 -   [realtor.com](https://www.realtor.com/)
+
+    Realtor.com is a website and app that offers a comprehensive database of property listings, allowing users to search for homes, apartments, and other real estate options. It also provides resources for finding real estate agents.
+
 -   County Assessor Websites
+
+    These are online portals provided by local government entities that offer property-related information, including property records, tax assessments, and maps. Users can access details about property ownership and tax information.
+
 -   [Vanguard](https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&gclsrc=aw.ds)
+
+    Vanguard is an investment management company that offers a wide range of financial products and services. It provides investors with access to mutual funds, ETFs, stocks, bonds, and retirement accounts, focusing on low-cost investing and providing tools and resources for financial planning.
+
 -   [Beacon](https://beacon.schneidercorp.com/) by Schneider Geospatial
+
+    Beacon by Schneider Geospatial is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.
 
 The Beacon website implemented restrictions that prohibit web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.
 
@@ -267,6 +284,8 @@ To learn about the web scraping techniques used for this project, click [here](h
 
 ## AI Models
 
+This section demonstrates the potential of AI to recognize the quality of house.
+
 ![](/images/MicrosoftTeams-image.png){width="603"}
 
 Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
@@ -290,6 +309,8 @@ Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfi
 Spider for web scraping
 
 More training data
+
+Getting more images that show poor quality of housing for training data
 
 ## Data source
 
