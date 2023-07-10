@@ -333,8 +333,6 @@ Working with Beacon - there is a limit - don't do it!
 
 Date of the google images - how to access the date
 
-once you have
-
 ## Data source
 
 -   2000 - 2020 Decennial Census
