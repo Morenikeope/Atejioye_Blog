@@ -137,6 +137,12 @@ Using TidyVerse in R, the following graphs was created.
 
 ![](/images/GYearBuilt.png){width="452"}
 
+::: {layout-ncol="2"}
+![](/images/GPopulationChange.png){width="452"}
+
+![](/images/GPopProjections.png){width="452"}
+:::
+
 ## Geographic Analysis
 
 One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
