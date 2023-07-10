@@ -2,7 +2,7 @@
 title: "Housing Project Report"
 author: "AI Housing Team"
 date: "2023-07-05"
-categories: [Report Draft]
+categories: [Report Draft, Final Report, Presentation]
 toc: TRUE
 ---
 
@@ -24,7 +24,7 @@ Utilizing web scraping techniques to collect images of houses from various asses
 
 The goal of the project is to investigate the condition of existing housing stock in rural Midwestern communities and develop a thorough and objective evaluation of housing quality using AI.
 
-Objectives:
+**Objectives:**
 
 -   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and median age of residents.
 
@@ -40,7 +40,7 @@ Objectives:
 
 ## **Literature Review**
 
-An important objective of the AI-Driven Housing Evaluation for Rural Community Development project was its focus on reviewing as much accessible literature and websites. Review of how cities have been using AI to address problems, and specifically housing problems, and how counties or cities assess housing conditions.
+An important objective of the project was its focus on reviewing as much accessible literature and websites. Review of how cities have been using AI to address problems, and specifically housing problems, and how counties or cities assess housing conditions.
 
 1.  **Ames City Housing Inspection**
 
