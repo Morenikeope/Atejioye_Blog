@@ -365,19 +365,33 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></p>
 <p><img src="../../images/10use_link.png" class="img-fluid"></p></li>
 <li><p>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></p>
-<p># Ogden</p>
-<p>og_data &lt;- read.csv(“~/GitHub/Housing/complete links/ogden_urls.csv”)</p>
-<p>urls_start &lt;- og_data[, 1]</p>
-<p>urls_full &lt;- paste(urls_start, “&amp;key=”, sep = ““)</p>
-<p>urls_full_api_key &lt;- paste(urls_full, api_key, sep = ““)</p>
-<p># creates folder and downloads all images</p>
-<p>dir.create(“ogden_google_images_folder”)</p>
-<p>for(i in seq_along(urls_full_api_key)) {</p>
-<p>___ file_path &lt;- file.path(“ogden_google_images_folder”, paste0(“G_OG_”, og_data[i,6], “_.png”))</p>
-<p>___ download.file(urls_full_api_key[i], file_path, mode = “wb”)</p>
-<p>___ print(file_path)</p>
-<p>___ print(i)</p>
-<p>}</p></li>
+<pre><code>{r}
+
+# Ogden
+
+og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
+
+urls_start &lt;- og_data[, 1]
+
+urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")
+
+urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")
+
+# creates folder and downloads all images
+
+dir.create("ogden_google_images_folder")
+
+for(i in seq_along(urls_full_api_key)) {
+
+___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
+
+___ download.file(urls_full_api_key[i], file_path, mode = "wb")
+
+___ print(file_path)
+
+___ print(i)
+
+}</code></pre></li>
 </ul>
 </section>
 </section>

@@ -256,31 +256,35 @@ To learn about the web scraping techniques used for this project, click [here](h
 
 -   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
-    \# Ogden
+    ```         
+    {r}
 
-    og_data \<- read.csv("\~/GitHub/Housing/complete links/ogden_urls.csv")
+    # Ogden
 
-    urls_start \<- og_data\[, 1\]
+    og_data <- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
 
-    urls_full \<- paste(urls_start, "&key=", sep = "")
+    urls_start <- og_data[, 1]
 
-    urls_full_api_key \<- paste(urls_full, api_key, sep = "")
+    urls_full <- paste(urls_start, "&key=", sep = "")
 
-    \# creates folder and downloads all images
+    urls_full_api_key <- paste(urls_full, api_key, sep = "")
+
+    # creates folder and downloads all images
 
     dir.create("ogden_google_images_folder")
 
     for(i in seq_along(urls_full_api_key)) {
 
-    \_\_\_ file_path \<- file.path("ogden_google_images_folder", paste0("G_OG\_", og_data\[i,6\], "\_.png"))
+    ___ file_path <- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
 
-    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = "wb")
+    ___ download.file(urls_full_api_key[i], file_path, mode = "wb")
 
-    \_\_\_ print(file_path)
+    ___ print(file_path)
 
-    \_\_\_ print(i)
+    ___ print(i)
 
     }
+    ```
 
 ## AI Models
 
