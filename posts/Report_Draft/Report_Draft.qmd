@@ -1,7 +1,7 @@
 ---
 title: "Housing Project Report"
 author: "AI Housing Team"
-date: "2023-07-05"
+date: "2023-07-10"
 categories: [Report Draft, Final Report, Presentation]
 toc: TRUE
 ---
@@ -26,9 +26,9 @@ The goal of the project is to investigate the condition of existing housing stoc
 
 **Objectives:**
 
--   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and median age of residents.
-
 -   Conduct a literature review to examine examples of AI applications in planning and housing.
+
+-   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and median age of residents.
 
 -   Collect housing data, including images, from existing sources such as Google Streets and county assessor websites.
 
@@ -123,25 +123,35 @@ More demographic analysis was done to determine which communities in Iowa could 
 
 Using TidyVerse in R, the following graphs was created.
 
-![](/images/GPopulationChange.png){width="452"}
+::: {layout-ncol="2"}
+![](/images/demographics/all_population.png){width="498"}
 
-![](/images/GPopProjections.png){width="452"}
+![](/images/demographics/all_percent_change.png){width="498"}
 
-![](/images/GMedIncome.png){width="452"}
+![](/images/demographics/change_pop_cities.png){width="498"}
 
-![](/images/GMedianHomeValue.png){width="452"}
+![](/images/demographics/pop_projection_cities.png){width="498"}
 
-![](/images/GMedHouseValue.png){width="452"}
+![](/images/demographics/home_ownership.png){width="498"}
 
-![](/images/GMedIncome2009.png){width="452"}
+![](/images/demographics/house_age.png){width="498"}
 
-![](/images/GYearBuilt.png){width="452"}
+![](/images/demographics/house_value_by_year.png){width="498"}
+
+![](/images/demographics/med_house.png){width="498"}
+:::
+
+![](/images/demographics/median_income.png)
+
+![](/images/demographics/median_value.png)
 
 ::: {layout-ncol="2"}
-![](/images/GPopulationChange.png){width="452"}
+![](/images/demographics/vacancy_rate.png){width="498"}
 
-![](/images/GPopProjections.png){width="452"}
+![](/images/demographics/vacant_reason.png){width="498"}
 :::
+
+![](/images/demographics/value_and_year_built.png){width="498"}
 
 ## Geographic Analysis
 
@@ -171,7 +181,7 @@ The image below depicts our project plan, outlining the strategies and actions w
 
 ## Data Collection
 
-At first, we gathered house images through manually, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
+At first, we gathered house images manually, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
 
 ### Web Scraping
 
@@ -181,15 +191,15 @@ Web scraping is like a digital tool that automatically collects information from
 
 We planned to collect house images from the following websites;
 
--   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE)
+-   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE){target="_blank"}
 
     Zillow is an online platform and app for real estate that allows users to search for homes, view property listings, and access data on home values and market trends.
 
--   [**Trulia**](https://www.trulia.com/)
+-   [**Trulia**](https://www.trulia.com/){target="_blank"}
 
     Trulia is another online platform and app for real estate that helps users find homes, apartments, and other property listings, and provides information on neighborhoods and market trends.
 
--   [**realtor.com**](https://www.realtor.com/)
+-   [**realtor.com**](https://www.realtor.com/){target="_blank"}
 
     Realtor.com is a website and app that offers a comprehensive database of property listings, allowing users to search for homes, apartments, and other real estate options. It also provides resources for finding real estate agents.
 
@@ -197,11 +207,11 @@ We planned to collect house images from the following websites;
 
     These are online portals provided by local government entities that offer property-related information, including property records, tax assessments, and maps. Users can access details about property ownership and tax information.
 
--   [**Vanguard**](https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&gclsrc=aw.ds)
+-   [**Vanguard**](https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&gclsrc=aw.ds){target="_blank"}
 
     Vanguard is an investment management company that offers a wide range of financial products and services. It provides investors with access to mutual funds, ETFs, stocks, bonds, and retirement accounts, focusing on low-cost investing and providing tools and resources for financial planning.
 
--   [**Beacon**](https://beacon.schneidercorp.com/) **by Schneider Geospatial**
+-   [**Beacon**](https://beacon.schneidercorp.com/){target="_blank"} **by Schneider Geospatial**
 
     This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.
 
@@ -261,7 +271,6 @@ To learn about the web scraping techniques used for this project, click [here](h
 -   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
     ```         
-             
     {r}
 
     # Ogden
@@ -311,7 +320,7 @@ Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io
 
 Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
-### Confidence Level and Accuracy
+### Confidence Level and Accuracy of Models
 
 ::: {layout-ncol="2"}
 ![](/images/confidence3.png){width="445"}
