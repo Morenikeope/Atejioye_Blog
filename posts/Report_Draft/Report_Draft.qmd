@@ -175,13 +175,13 @@ At first, we gathered house images through manually, amassing a total of approxi
 
 ### Web Scraping
 
-Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching.
+Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.
 
 ![](/images/zillow.png)
 
 We planned to collect house images from the following websites;
 
--   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169|65545421228|aud-352785741564:kwd-570802407|603457706088|&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE)
+-   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE)
 
     Zillow is an online platform and app for real estate that allows users to search for homes, view property listings, and access data on home values and market trends.
 
@@ -261,6 +261,7 @@ To learn about the web scraping techniques used for this project, click [here](h
 -   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
     ```         
+             
     {r}
 
     # Ogden
@@ -310,6 +311,14 @@ Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io
 
 Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
+### Confidence Level
+
+::: {layout-ncol="2"}
+![](/images/confidence3.png){width="445"}
+
+![](/images/confidence2.png){width="434"}
+:::
+
 ## Conclusion
 
 ## Recommendation
@@ -321,6 +330,10 @@ More training data
 Getting more images that show poor quality of housing for training data
 
 Working with Beacon - there is a limit - don't do it!
+
+Date of the google images - how to access the date
+
+once you have
 
 ## Data source
 
