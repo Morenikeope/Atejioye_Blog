@@ -181,7 +181,7 @@ The image below depicts our project plan, outlining the strategies and actions w
 
 ## Data Collection
 
-At first, we gathered house images manually, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
+At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
 
 ### Web Scraping
 
@@ -189,7 +189,7 @@ Web scraping is like a digital tool that automatically collects information from
 
 ![](/images/zillow.png)
 
-We planned to collect house images from the following websites;
+The plan was to collect house images from the following websites;
 
 -   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE){target="_blank"}
 
@@ -223,8 +223,9 @@ We resolved to web scraping from the following websites;
 -   Google Street View
 -   Vanguard
 -   Beacon
+-   Polk County Assessor Website
 
-Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.
+Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.
 
 ![](/images/MicrosoftTeams-image%20(1).png){width="436"}
 
@@ -245,8 +246,6 @@ G - Google
 V - Vanguard
 
 B - Beacon
-
-S - Slater
 
 H - New Hampton
 
@@ -270,27 +269,55 @@ To learn about the web scraping techniques used for this project, click [here](h
 
 -   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
+    \# Ogden
+
+    og_data \<- read.csv(\"\~/GitHub/Housing/complete links/ogden_urls.csv\")
+
+    urls_start \<- og_data\[, 1\]
+
+    urls_full \<- paste(urls_start, \"&key=\", sep = \"\")
+
+    urls_full_api_key \<- paste(urls_full, api_key, sep = \"\")
+
+    \# creates folder and downloads all images
+
+    dir.create(\"ogden_google_images_folder\")
+
+    for(i in seq_along(urls_full_api_key)) {
+
+    \_\_\_ file_path \<- file.path(\"ogden_google_images_folder\", paste0(\"G_OG\_\", og_data\[i,6\], \"\_.png\"))
+
+    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = \"wb\")
+
+    \_\_\_ print(file_path)
+
+    \_\_\_ print(i)
+
+    }
+
 ## AI Models
 
 This section demonstrates the potential of AI to recognize the quality of house.
 
-![](/images/MicrosoftTeams-image.png){width="603"}
-
-<https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html>
-
 Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
 
-Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
+-   Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
 
-Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
+-   Building a Multi-Category Image Classification AI Model - [Multi-Category Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model){target="_blank"}
 
-Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
+-   Sorting Images - [Image Sorting](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images){target="_blank"}
 
-Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
+-   Training the Model - [Model Training](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model){target="_blank"}
 
-Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
+-   Utilizing a Trained AI Model - [Utilizing AI Model](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model){target="_blank"}
 
-Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
+-   Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
+
+![](/images/MicrosoftTeams-image.png){width="603"}
+
+### [Guide to Housing Project AI Models](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html){.uri}
+
+![](/images/neural_network.png)
 
 ### Confidence Level and Accuracy of Models
 
@@ -304,15 +331,11 @@ Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfi
 
 ## Recommendation
 
-Spider for web scraping
+-   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Beacon**.
 
-More training data
+    For Year 2, use all sources but look into using spider to scrape from Zillow, Beacon and Vanguard.
 
-Getting more images that show poor quality of housing for training data
-
-Working with Beacon - there is a limit - don't do it!
-
-Date of the google images - how to access the date
+-   
 
 ## Data source
 
