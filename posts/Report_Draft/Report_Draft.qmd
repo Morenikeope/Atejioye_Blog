@@ -360,9 +360,7 @@ Details of the first attempt at creating an AI model can be found [here](https:/
 
     Artificial Intelligence (AI) Concepts in Python
 
-    Introduction to Web Scraping
-
--   Harness the power of ChatGPT but do not fully trust it. The most productive way to use ChatGPT for coding is when you know exactly what should be happening and you just need a crutch to get there. General AI models the chatbot is somewhat helpful in debugging.
+    Introduction to Web Scraping in R
 
 -   Implement F1 Score into the code. It is a popular way to see how well models are performing.
 
