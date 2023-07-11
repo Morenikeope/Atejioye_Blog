@@ -331,7 +331,7 @@ In conclusion, this project successfully achieved its objectives. A comprehensiv
 
 Furthermore, the project employed AI analysis, particularly siding, vegetation and gutter detection, to identify homes that could benefit from community assistance programs. The results were assessed and used to refine the selection criteria for Year 2, incorporating the gained insights.
 
-## Recommendation
+## Recommendations
 
 -   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Beacon,** second best is **Google**.
 
@@ -368,7 +368,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 
 -   Implement F1 Score into the code. It is a popular way to see how well models are performing.
 
--   Tools used for geocoding are QGIS and R, use python for geocoding to check if it will be better than the two used in the project.
+-   Tools used for geocoding were QGIS and R, use python for geocoding to check if it will be better than the two used in the project.
 
 ## Data source
 
