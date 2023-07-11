@@ -329,11 +329,44 @@ Details of the first attempt at creating an AI model can be found [here](https:/
 
 ## Recommendation
 
--   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Beacon**.
+-   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Beacon,** second best is **Google**.
 
     For Year 2, use all sources but look into using spider to scrape from Zillow, Beacon and Vanguard.
 
--   
+-   Box is best for storing images while Github is best for storing files. Google Drive will need to separately download images and files to run. Microsoft Teams is good for general quick sharing of information but not a great home for important documents.
+
+-   **Image Classification for Model Training**
+
+    |                                                    |                                          |
+    |-----------------------------------------|----------------------------------------|
+    | **If Image Classification,**                       | **Recommendations**                      |
+    | Time consuming                                     | Use a team                               |
+    | Subjective                                         | Obtain two ratings per photo             |
+    | Has inconsistent ratings across evaluators         | Obtain two ratings per photo             |
+    | Results influenced by number of ratings categories | Make duplicates                          |
+    | It takes up space on your local storage            | Download box on your your local computer |
+
+-   Collect more training and test house images.
+
+-   Build a broken window model to identify broken or boarded up windows and a trash model to identify trash in the yard.
+
+-   **Learning materials on DataCamp**
+
+    Deep Learning with PyTorch
+
+    Introduction to Deep Learning with Keras
+
+    Image Processing in Python
+
+    Artificial Intelligence (AI) Concepts in Python
+
+    Introduction to Web Scraping
+
+-   Harness the power of ChatGPT but do not fully trust it. The most productive way to use ChatGPT for coding is when you know exactly what should be happening and you just need a crutch to get there. General AI models the chatbot is somewhat helpful in debugging.
+
+-   Implement F1 Score into the code. It is a popular way to see how well models are performing.
+
+-   Tools used for geocoding are QGIS and R, use python for geocoding to check if it will be better than the two used in the project.
 
 ## Data source
 
