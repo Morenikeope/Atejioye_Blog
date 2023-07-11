@@ -160,10 +160,11 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">Web Scraping</a></li>
   <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link" data-scroll-target="#naming-convention">Naming Convention</a></li>
-  <li><a href="#collecting-addresses-and-images" id="toc-collecting-addresses-and-images" class="nav-link" data-scroll-target="#collecting-addresses-and-images"><strong>Collecting Addresses and Images</strong></a></li>
+  <li><a href="#web-scraping-technique" id="toc-web-scraping-technique" class="nav-link" data-scroll-target="#web-scraping-technique"><strong>Web Scraping Technique</strong></a></li>
   </ul></li>
   <li><a href="#ai-models" id="toc-ai-models" class="nav-link" data-scroll-target="#ai-models">AI Models</a>
   <ul class="collapse">
+  <li><a href="#guide-to-housing-project-ai-models" id="toc-guide-to-housing-project-ai-models" class="nav-link" data-scroll-target="#guide-to-housing-project-ai-models">Guide to Housing Project AI Models</a></li>
   <li><a href="#confidence-level-and-accuracy-of-models" id="toc-confidence-level-and-accuracy-of-models" class="nav-link" data-scroll-target="#confidence-level-and-accuracy-of-models">Confidence Level and Accuracy of Models</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -341,12 +342,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<p>At first, we gathered house images manually, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
+<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
 <section id="web-scraping" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
 <p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.</p>
 <p><img src="../../images/zillow.png" class="img-fluid"></p>
-<p>We planned to collect house images from the following websites;</p>
+<p>The plan was to collect house images from the following websites;</p>
 <ul>
 <li><p><a href="https://www.zillow.com/?utm_medium=cpc&amp;utm_source=google&amp;utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&amp;semQue=null&amp;gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE" target="_blank"><strong>Zillow</strong></a></p>
 <p>Zillow is an online platform and app for real estate that allows users to search for homes, view property listings, and access data on home values and market trends.</p></li>
@@ -368,8 +369,9 @@ ul.task-list li input[type="checkbox"] {
 <li>Google Street View</li>
 <li>Vanguard</li>
 <li>Beacon</li>
+<li>Polk County Assessor Website</li>
 </ul>
-<p>Based on the WinVEST project, we collected house images of Independence, Slater, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View.</p>
+<p>Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.</p>
 <p><img src="../../images/MicrosoftTeams-image (1).png" class="img-fluid" width="436"></p>
 </section>
 <section id="naming-convention" class="level3">
@@ -385,35 +387,52 @@ ul.task-list li input[type="checkbox"] {
 <p>G - Google</p>
 <p>V - Vanguard</p>
 <p>B - Beacon</p>
-<p>S - Slater</p>
 <p>H - New Hampton</p>
 <p>D - Independence</p>
 <p>G - Grundy Center</p>
 <p>During the data collection process, we encountered “address” inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2. Fortunately, the function used to retrieve Google images managed to run successfully, although it reported 50 errors related to these address variations, including both the dual house numbers and the presence of half signs. It is worth noting that even if one of the address numbers is removed or the 1/2 is eliminated (essentially removing the “/” sign), the image URL still leads to a valid Google image. In order to address this issue, it is possible to revisit the URLs and modify them to obtain images corresponding to these specific addresses, if necessary.</p>
-<p>To learn about the web scraping techniques used for this project, click <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html" target="_blank">here</a>.</p>
 </section>
-<section id="collecting-addresses-and-images" class="level3">
-<h3 class="anchored" data-anchor-id="collecting-addresses-and-images"><strong>Collecting Addresses and Images</strong></h3>
+<section id="web-scraping-technique" class="level3">
+<h3 class="anchored" data-anchor-id="web-scraping-technique"><strong>Web Scraping Technique</strong></h3>
 <ul>
 <li><p>Address Collection and Cleaning <strong>-</strong> <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">Address Collection</a></p>
 <p><img src="../../images/6beacon_select.png" class="img-fluid"></p></li>
 <li><p>Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></p>
 <p><img src="../../images/10use_link.png" class="img-fluid"></p></li>
-<li><p>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></p></li>
+<li><p>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></p>
+<p># Ogden</p>
+<p>og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")</p>
+<p>urls_start &lt;- og_data[, 1]</p>
+<p>urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")</p>
+<p>urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")</p>
+<p># creates folder and downloads all images</p>
+<p>dir.create("ogden_google_images_folder")</p>
+<p>for(i in seq_along(urls_full_api_key)) {</p>
+<p>___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))</p>
+<p>___ download.file(urls_full_api_key[i], file_path, mode = "wb")</p>
+<p>___ print(file_path)</p>
+<p>___ print(i)</p>
+<p>}</p></li>
 </ul>
 </section>
 </section>
 <section id="ai-models" class="level2">
 <h2 class="anchored" data-anchor-id="ai-models">AI Models</h2>
 <p>This section demonstrates the potential of AI to recognize the quality of house.</p>
-<p><img src="../../images/MicrosoftTeams-image.png" class="img-fluid" width="603"></p>
 <p>Details of the first attempt at creating an AI model can be found <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html" target="_blank">here</a>.</p>
-<p>Building a Binary Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model" target="_blank">Binary Image Classification</a></p>
-<p>Building a Multi-Category Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model" target="_blank">Multi-Category Image Classification</a></p>
-<p>Sorting Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images" target="_blank">Image Sorting</a></p>
-<p>Training the Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model" target="_blank">Model Training</a></p>
-<p>Utilizing a Trained AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model" target="_blank">Utilizing AI Model</a></p>
-<p>Exporting Predictions to a CSV on Address - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address" target="_blank">Export Predictions</a></p>
+<ul>
+<li><p>Building a Binary Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model" target="_blank">Binary Image Classification</a></p></li>
+<li><p>Building a Multi-Category Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model" target="_blank">Multi-Category Image Classification</a></p></li>
+<li><p>Sorting Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#sorting-images" target="_blank">Image Sorting</a></p></li>
+<li><p>Training the Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#training-the-model" target="_blank">Model Training</a></p></li>
+<li><p>Utilizing a Trained AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#utilizing-a-trained-ai-model" target="_blank">Utilizing AI Model</a></p></li>
+<li><p>Exporting Predictions to a CSV on Address - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address" target="_blank">Export Predictions</a></p></li>
+</ul>
+<p><img src="../../images/MicrosoftTeams-image.png" class="img-fluid" width="603"></p>
+<section id="guide-to-housing-project-ai-models" class="level3">
+<h3 class="anchored" data-anchor-id="guide-to-housing-project-ai-models"><a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html" class="uri">Guide to Housing Project AI Models</a></h3>
+<p><img src="../../images/neural_network.png" class="img-fluid"></p>
+</section>
 <section id="confidence-level-and-accuracy-of-models" class="level3">
 <h3 class="anchored" data-anchor-id="confidence-level-and-accuracy-of-models">Confidence Level and Accuracy of Models</h3>
 <div class="quarto-layout-panel">
@@ -433,11 +452,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recommendation" class="level2">
 <h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
-<p>Spider for web scraping</p>
-<p>More training data</p>
-<p>Getting more images that show poor quality of housing for training data</p>
-<p>Working with Beacon - there is a limit - don’t do it!</p>
-<p>Date of the google images - how to access the date</p>
+<ul>
+<li><p>Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is <strong>Beacon</strong>.</p>
+<p>For Year 2, use all sources but look into using spider to scrape from Zillow, Beacon and Vanguard.</p></li>
+<li></li>
+</ul>
 </section>
 <section id="data-source" class="level2">
 <h2 class="anchored" data-anchor-id="data-source">Data source</h2>
