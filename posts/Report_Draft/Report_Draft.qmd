@@ -262,7 +262,7 @@ Based on the WINVEST project, the team decided to work with the communities of G
 -   Age of houses
 -   Median house values
 
-Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.
+Using the infographics feature on ArcGIS Pro, we created community summary of the state of Iowa, Grundy center, Independence, and New Hampton respectively.
 
 **State of Iowa**
 
@@ -327,7 +327,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 
 ## Recommendations
 
--   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Google**.
+-   Based on the image sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Google**.
 
     In Year 2, utilize county assessor websites as they provide valuable data for assessment purposes and assess to Zillow, Beacon, Vanguard, and so on.
 
@@ -336,7 +336,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |----------------------------------------------------|------------------------------------------|
+    |------------------------------------|------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
