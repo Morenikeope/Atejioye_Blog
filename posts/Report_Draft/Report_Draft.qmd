@@ -230,11 +230,7 @@ Details of the first attempt at creating an AI model can be found [here](https:/
 
 ### Confidence Level and Accuracy of Models
 
-::: {layout-ncol="2"}
-![](/images/confidence3.png){width="445"}
-
-![](/images/confidence_new.png){width="441"}
-:::
+![](/images/confidencelevelnew.png)
 
 ## Geographic Analysis
 
@@ -340,7 +336,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |------------------------------------|------------------------------------|
+    |----------------------------------------------------|------------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
