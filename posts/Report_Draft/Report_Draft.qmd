@@ -269,23 +269,23 @@ During the data collection process, we encountered "address" inconsistencies in 
 
     \# Ogden
 
-    og_data \<- read.csv(\"\~/GitHub/Housing/complete links/ogden_urls.csv\")
+    og_data \<- read.csv("\~/GitHub/Housing/complete links/ogden_urls.csv")
 
     urls_start \<- og_data\[, 1\]
 
-    urls_full \<- paste(urls_start, \"&key=\", sep = \"\")
+    urls_full \<- paste(urls_start, "&key=", sep = "")
 
-    urls_full_api_key \<- paste(urls_full, api_key, sep = \"\")
+    urls_full_api_key \<- paste(urls_full, api_key, sep = "")
 
     \# creates folder and downloads all images
 
-    dir.create(\"ogden_google_images_folder\")
+    dir.create("ogden_google_images_folder")
 
     for(i in seq_along(urls_full_api_key)) {
 
-    \_\_\_ file_path \<- file.path(\"ogden_google_images_folder\", paste0(\"G_OG\_\", og_data\[i,6\], \"\_.png\"))
+    \_\_\_ file_path \<- file.path("ogden_google_images_folder", paste0("G_OG\_", og_data\[i,6\], "\_.png"))
 
-    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = \"wb\")
+    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = "wb")
 
     \_\_\_ print(file_path)
 
@@ -342,7 +342,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |-----------------------------------------|----------------------------------------|
+    |------------------------------------|------------------------------------|
     | **If Image Classification,**                       | **Recommendations**                      |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
@@ -366,9 +366,19 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 
     Introduction to Web Scraping in R
 
+    Understanding machine learning
+
 -   Implement F1 Score into the code. It is a popular way to see how well models are performing.
 
 -   Tools used for geocoding were QGIS and R, use python for geocoding to check if it will be better than the two used in the project.
+
+More objectives to be considered for Year 2 of this project;
+
+-   Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.
+
+-   Create an application that can be used by cities.
+
+-   Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.
 
 ## Data source
 

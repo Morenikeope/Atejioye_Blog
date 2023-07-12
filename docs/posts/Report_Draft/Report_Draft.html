@@ -401,15 +401,15 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="../../images/10use_link.png" class="img-fluid"></p></li>
 <li><p>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></p>
 <p># Ogden</p>
-<p>og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")</p>
+<p>og_data &lt;- read.csv(“~/GitHub/Housing/complete links/ogden_urls.csv”)</p>
 <p>urls_start &lt;- og_data[, 1]</p>
-<p>urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")</p>
-<p>urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")</p>
+<p>urls_full &lt;- paste(urls_start, “&amp;key=”, sep = ““)</p>
+<p>urls_full_api_key &lt;- paste(urls_full, api_key, sep = ““)</p>
 <p># creates folder and downloads all images</p>
-<p>dir.create("ogden_google_images_folder")</p>
+<p>dir.create(“ogden_google_images_folder”)</p>
 <p>for(i in seq_along(urls_full_api_key)) {</p>
-<p>___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))</p>
-<p>___ download.file(urls_full_api_key[i], file_path, mode = "wb")</p>
+<p>___ file_path &lt;- file.path(“ogden_google_images_folder”, paste0(“G_OG_”, og_data[i,6], “_.png”))</p>
+<p>___ download.file(urls_full_api_key[i], file_path, mode = “wb”)</p>
 <p>___ print(file_path)</p>
 <p>___ print(i)</p>
 <p>}</p></li>
@@ -462,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
 <table class="table">
 <colgroup>
 <col style="width: 50%">
-<col style="width: 49%">
+<col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -498,9 +498,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Introduction to Deep Learning with Keras</p>
 <p>Image Processing in Python</p>
 <p>Artificial Intelligence (AI) Concepts in Python</p>
-<p>Introduction to Web Scraping in R</p></li>
+<p>Introduction to Web Scraping in R</p>
+<p>Understanding machine learning</p></li>
 <li><p>Implement F1 Score into the code. It is a popular way to see how well models are performing.</p></li>
 <li><p>Tools used for geocoding were QGIS and R, use python for geocoding to check if it will be better than the two used in the project.</p></li>
+</ul>
+<p>More objectives to be considered for Year 2 of this project;</p>
+<ul>
+<li><p>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</p></li>
+<li><p>Create an application that can be used by cities.</p></li>
+<li><p>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</p></li>
 </ul>
 </section>
 <section id="data-source" class="level2">
