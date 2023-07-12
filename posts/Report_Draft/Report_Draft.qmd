@@ -1,7 +1,7 @@
 ---
 title: "Housing Project Report"
 author: "AI Housing Team"
-date: "2023-07-10"
+date: "2023-07-14"
 categories: [Report Draft, Final Report, Presentation]
 toc: TRUE
 ---
@@ -82,97 +82,6 @@ The Des Moines Revitalization program is pioneering a groundbreaking approach to
 
 Read more [here](https://www.desmoinesregister.com/story/news/local/des-moines/2023/03/08/des-moines-wonders-if-a-machine-can-better-assess-home-conditions/69965121007/?utm_source=ground.news&utm_medium=referral){target="_blank"} and [here](https://www.axios.com/local/des-moines/2023/03/10/ai-assessment-desmoines-properties-iowa){target="_blank"}.
 
-## Demographic Analysis
-
-Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.
-
--   Home ownership rate
--   Population change
--   Median household income
--   Age of houses
--   Median house values
-
-Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.
-
-**Iowa State**
-
-![](/images/Iowa_community_summary.png){width="703"}
-
-**Grundy Center**
-
-![](/images/grundy_center_community_summary%20(1).png){width="703"}
-
-**Independence**
-
-![](/images/independence_community_summary.png){width="703"}
-
-**New Hampton**
-
-![](/images/new_hampton_community_summary.png){width="703"}
-
-To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday){target="_blank"} for a guide.
-
-More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;
-
--   Local spending pattern
--   Median age of residents
--   Population between 500 and 10,000
--   Stable, shrinking or increasing population
--   Presence of a school
--   Communities with growing income base
-
-Using TidyVerse in R, the following graphs was created.
-
-::: {layout-ncol="2"}
-![](/images/demographics/all_population.png){width="498"}
-
-![](/images/demographics/all_percent_change.png){width="498"}
-
-![](/images/demographics/change_pop_cities.png){width="498"}
-
-![](/images/demographics/pop_projection_cities.png){width="498"}
-
-![](/images/demographics/home_ownership.png){width="498"}
-
-![](/images/demographics/house_age.png){width="498"}
-
-![](/images/demographics/house_value_by_year.png){width="498"}
-
-![](/images/demographics/med_house.png){width="498"}
-:::
-
-![](/images/demographics/median_income.png)
-
-![](/images/demographics/median_value.png)
-
-::: {layout-ncol="2"}
-![](/images/demographics/vacancy_rate.png){width="498"}
-
-![](/images/demographics/vacant_reason.png){width="498"}
-:::
-
-![](/images/demographics/value_and_year_built.png){width="498"}
-
-## Geographic Analysis
-
-One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
-
-To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
-
-More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping){target="_blank"}.
-
-![](/images/ogden_siding_dashboard.png)
-
-We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.
-
-Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html){target="_blank"} for more information.
-
-### Tableau Dashboard
-
-![](/images/Screen%20Shot%202023-07-06%20at%209.55.27%20PM.png)
-
-#### [Tableau Dashboard](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html){target="_blank"}
-
 ## Workflow
 
 The image below depicts our project plan, outlining the strategies and actions we undertook to accomplish our objectives. The strategies include image gathering / data collection, creating a database and building AI models.
@@ -207,13 +116,17 @@ The plan was to collect house images from the following websites;
 
     These are online portals provided by local government entities that offer property-related information, including property records, tax assessments, and maps. Users can access details about property ownership and tax information.
 
--   [**Vanguard**](https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&gclsrc=aw.ds){target="_blank"}
+-   [**Vanguard Appraisals, Inc**](https://www.iowaassessors.com/){target="_blank"}
 
-    Vanguard is an investment management company that offers a wide range of financial products and services. It provides investors with access to mutual funds, ETFs, stocks, bonds, and retirement accounts, focusing on low-cost investing and providing tools and resources for financial planning.
+    Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.
 
 -   [**Beacon**](https://beacon.schneidercorp.com/){target="_blank"} **by Schneider Geospatial**
 
     This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.
+
+-   **Google Street View**
+
+    To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.
 
 The Beacon website implemented restrictions that prohibits web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.
 
@@ -227,7 +140,11 @@ We resolved to web scraping from the following websites;
 
 Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.
 
+::: {layout-ncol="2"}
 ![](/images/MicrosoftTeams-image%20(1).png){width="436"}
+
+![](/images/no_image.png){width="436"}
+:::
 
 ### Naming Convention
 
@@ -239,19 +156,13 @@ To ensure convenient access to the images collected from various sources, we dev
 
 **Result**: Z_H_311 W MAIN ST
 
-Z - Zillow
-
-G - Google
-
-V - Vanguard
-
-B - Beacon
-
-H - New Hampton
-
-D - Independence
-
-G - Grundy Center
+| Source       | City              |
+|--------------|-------------------|
+| Z - Zillow   | H - New Hampton   |
+| G - Google   | D - Independence  |
+| V - Vanguard | G - Grundy Center |
+| B - Beacon   | S - Slater        |
+| W - WINVEST  | Des Moines        |
 
 During the data collection process, we encountered "address" inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2. Fortunately, the function used to retrieve Google images managed to run successfully, although it reported 50 errors related to these address variations, including both the dual house numbers and the presence of half signs. It is worth noting that even if one of the address numbers is removed or the 1/2 is eliminated (essentially removing the "/" sign), the image URL still leads to a valid Google image. In order to address this issue, it is possible to revisit the URLs and modify them to obtain images corresponding to these specific addresses, if necessary.
 
@@ -325,6 +236,93 @@ Details of the first attempt at creating an AI model can be found [here](https:/
 ![](/images/confidence_new.png){width="441"}
 :::
 
+## Geographic Analysis
+
+One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
+
+To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
+
+More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping){target="_blank"}.
+
+![](/images/siding_slater.png)
+
+We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.
+
+Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html){target="_blank"} for more information.
+
+### Tableau Dashboard
+
+![](/images/Screen%20Shot%202023-07-06%20at%209.55.27%20PM.png)
+
+#### [Tableau Dashboard](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html){target="_blank"}
+
+## Demographic Analysis
+
+Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.
+
+-   Home ownership rate
+-   Population change
+-   Median household income
+-   Age of houses
+-   Median house values
+
+Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.
+
+**State of Iowa**
+
+![](/images/Iowa_community_summary.png){width="703"}
+
+**Grundy Center**
+
+![](/images/grundy_center_community_summary%20(1).png){width="703"}
+
+**Independence**
+
+![](/images/independence_community_summary.png){width="703"}
+
+**New Hampton**
+
+![](/images/new_hampton_community_summary.png){width="703"}
+
+To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday){target="_blank"} for a guide.
+
+More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;
+
+-   Local spending pattern
+-   Median age of residents
+-   Population between 500 and 10,000
+-   Stable, shrinking or increasing population
+-   Presence of a school
+-   Communities with growing income base
+
+Using TidyVerse in R, the following graphs was created.
+
+::: {layout-ncol="2"}
+![](/images/demographics/all_population.png){width="498"}
+
+![](/images/demographics/all_percent_change.png){width="498"}
+
+![](/images/demographics/change_pop_cities.png){width="498"}
+
+![](/images/demographics/pop_projection_cities.png){width="498"}
+
+![](/images/demographics/home_ownership.png){width="498"}
+
+![](/images/demographics/med_house.png){width="498"}
+:::
+
+![](/images/demographics/median_income.png)
+
+![](/images/demographics/median_value.png)
+
+::: {layout-ncol="2"}
+![](/images/demographics/vacancy_rate.png){width="498"}
+
+![](/images/demographics/vacant_reason.png){width="498"}
+:::
+
+![](/images/demographics/value_and_year_built.png){width="522"}
+
 ## Conclusion
 
 In conclusion, this project successfully achieved its objectives. A comprehensive literature review was conducted to explore the implementation of AI in planning and housing, providing valuable examples and insights. Study communities within the targeted population range were identified based on specific criteria, including population stability, the presence of a school, and median age of residents. Housing data, including images, was collected from reliable sources such as Google and county assessor websites.
@@ -333,9 +331,9 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 
 ## Recommendations
 
--   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Beacon,** second best is **Google**.
+-   Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is **Google**.
 
-    In Year 2, utilize all the sources but consider using spider to scrape from Zillow, Beacon and Vanguard.
+    In Year 2, utilize county assessor websites as they provide valuable data for assessment purposes and assess to Zillow, Beacon, Vanguard, and so on.
 
 -   Box is best for storing images while Github is best for storing files. Google Drive will need to separately download images and files to run. Microsoft Teams is good for general quick sharing of information but not a great home for important documents.
 
@@ -343,7 +341,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 
     |                                                    |                                          |
     |------------------------------------|------------------------------------|
-    | **If Image Classification,**                       | **Recommendations**                      |
+    | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
     | Has inconsistent ratings across evaluators         | Obtain two ratings per photo             |
@@ -375,9 +373,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 More objectives to be considered for Year 2 of this project;
 
 -   Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.
-
 -   Create an application that can be used by cities.
-
 -   Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.
 
 ## Data source

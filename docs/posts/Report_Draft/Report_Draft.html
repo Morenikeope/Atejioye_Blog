@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="AI Housing Team">
-<meta name="dcterms.date" content="2023-07-10">
+<meta name="dcterms.date" content="2023-07-14">
 
 <title>Home - Housing Project Report</title>
 <style>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 10, 2023</p>
+        <p class="date">July 14, 2023</p>
       </div>
     </div>
     
@@ -150,11 +150,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><strong>Introduction</strong></a></li>
   <li><a href="#goal-and-objectives" id="toc-goal-and-objectives" class="nav-link" data-scroll-target="#goal-and-objectives"><strong>Goal and Objectives</strong></a></li>
   <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review"><strong>Literature Review</strong></a></li>
-  <li><a href="#demographic-analysis" id="toc-demographic-analysis" class="nav-link" data-scroll-target="#demographic-analysis">Demographic Analysis</a></li>
-  <li><a href="#geographic-analysis" id="toc-geographic-analysis" class="nav-link" data-scroll-target="#geographic-analysis">Geographic Analysis</a>
-  <ul class="collapse">
-  <li><a href="#tableau-dashboard" id="toc-tableau-dashboard" class="nav-link" data-scroll-target="#tableau-dashboard">Tableau Dashboard</a></li>
-  </ul></li>
   <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
   <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a>
   <ul class="collapse">
@@ -167,6 +162,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#guide-to-housing-project-ai-models" id="toc-guide-to-housing-project-ai-models" class="nav-link" data-scroll-target="#guide-to-housing-project-ai-models">Guide to Housing Project AI Models</a></li>
   <li><a href="#confidence-level-and-accuracy-of-models" id="toc-confidence-level-and-accuracy-of-models" class="nav-link" data-scroll-target="#confidence-level-and-accuracy-of-models">Confidence Level and Accuracy of Models</a></li>
   </ul></li>
+  <li><a href="#geographic-analysis" id="toc-geographic-analysis" class="nav-link" data-scroll-target="#geographic-analysis">Geographic Analysis</a>
+  <ul class="collapse">
+  <li><a href="#tableau-dashboard" id="toc-tableau-dashboard" class="nav-link" data-scroll-target="#tableau-dashboard">Tableau Dashboard</a></li>
+  </ul></li>
+  <li><a href="#demographic-analysis" id="toc-demographic-analysis" class="nav-link" data-scroll-target="#demographic-analysis">Demographic Analysis</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data source</a></li>
@@ -241,100 +241,6 @@ ul.task-list li input[type="checkbox"] {
 <p>The Des Moines Revitalization program is pioneering a groundbreaking approach to assess housing conditions through the utilization of AI. With the aim of revitalizing the city’s housing stock, this innovative program leverages AI technology to objectively evaluate the condition of homes in Des Moines. By analyzing various data points, including structural features, maintenance history, and overall quality, the AI system provides a comprehensive assessment of each property. This data-driven approach allows the program to identify areas in need of improvement, prioritize revitalization efforts, and allocate resources effectively.</p>
 <p>Read more <a href="https://www.desmoinesregister.com/story/news/local/des-moines/2023/03/08/des-moines-wonders-if-a-machine-can-better-assess-home-conditions/69965121007/?utm_source=ground.news&amp;utm_medium=referral" target="_blank">here</a> and <a href="https://www.axios.com/local/des-moines/2023/03/10/ai-assessment-desmoines-properties-iowa" target="_blank">here</a>.</p>
 </section>
-<section id="demographic-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="demographic-analysis">Demographic Analysis</h2>
-<p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.</p>
-<ul>
-<li>Home ownership rate</li>
-<li>Population change</li>
-<li>Median household income</li>
-<li>Age of houses</li>
-<li>Median house values</li>
-</ul>
-<p>Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.</p>
-<p><strong>Iowa State</strong></p>
-<p><img src="../../images/Iowa_community_summary.png" class="img-fluid" width="703"></p>
-<p><strong>Grundy Center</strong></p>
-<p><img src="../../images/grundy_center_community_summary (1).png" class="img-fluid" width="703"></p>
-<p><strong>Independence</strong></p>
-<p><img src="../../images/independence_community_summary.png" class="img-fluid" width="703"></p>
-<p><strong>New Hampton</strong></p>
-<p><img src="../../images/new_hampton_community_summary.png" class="img-fluid" width="703"></p>
-<p>To make a community summary infographic you can check <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
-<p>More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;</p>
-<ul>
-<li>Local spending pattern</li>
-<li>Median age of residents</li>
-<li>Population between 500 and 10,000</li>
-<li>Stable, shrinking or increasing population</li>
-<li>Presence of a school</li>
-<li>Communities with growing income base</li>
-</ul>
-<p>Using TidyVerse in R, the following graphs was created.</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/all_population.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/all_percent_change.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/change_pop_cities.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/pop_projection_cities.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/home_ownership.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/house_age.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/house_value_by_year.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/med_house.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-</div>
-<p><img src="../../images/demographics/median_income.png" class="img-fluid"></p>
-<p><img src="../../images/demographics/median_value.png" class="img-fluid"></p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/vacancy_rate.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/vacant_reason.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-</div>
-<p><img src="../../images/demographics/value_and_year_built.png" class="img-fluid" width="498"></p>
-</section>
-<section id="geographic-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="geographic-analysis">Geographic Analysis</h2>
-<p>One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.</p>
-<p>To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
-<p>More information <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping" target="_blank">here</a>.</p>
-<p><img src="../../images/ogden_siding_dashboard.png" class="img-fluid"></p>
-<p>We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.</p>
-<p>Click <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html" target="_blank">here</a> for more information.</p>
-<section id="tableau-dashboard" class="level3">
-<h3 class="anchored" data-anchor-id="tableau-dashboard">Tableau Dashboard</h3>
-<p><img src="../../images/Screen Shot 2023-07-06 at 9.55.27 PM.png" class="img-fluid"></p>
-<section id="tableau-dashboard-1" class="level4">
-<h4 class="anchored" data-anchor-id="tableau-dashboard-1"><a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html" target="_blank">Tableau Dashboard</a></h4>
-</section>
-</section>
-</section>
 <section id="workflow" class="level2">
 <h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
 <p>The image below depicts our project plan, outlining the strategies and actions we undertook to accomplish our objectives. The strategies include image gathering / data collection, creating a database and building AI models.</p>
@@ -357,10 +263,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Realtor.com is a website and app that offers a comprehensive database of property listings, allowing users to search for homes, apartments, and other real estate options. It also provides resources for finding real estate agents.</p></li>
 <li><p><strong>County Assessor Websites</strong></p>
 <p>These are online portals provided by local government entities that offer property-related information, including property records, tax assessments, and maps. Users can access details about property ownership and tax information.</p></li>
-<li><p><a href="https://investor.vanguard.com/corporate-portal?cmpgn=BR:PS:XXX:BR:11082021:GS:DM:BD_KeywordAdvice_EXM:RTG:Home:Home:Ad&amp;gclid=EAIaIQobChMIuueyi6aEgAMV8G5vBB36swgREAAYASAAEgKvf_D_BwE&amp;gclsrc=aw.ds" target="_blank"><strong>Vanguard</strong></a></p>
-<p>Vanguard is an investment management company that offers a wide range of financial products and services. It provides investors with access to mutual funds, ETFs, stocks, bonds, and retirement accounts, focusing on low-cost investing and providing tools and resources for financial planning.</p></li>
+<li><p><a href="https://www.iowaassessors.com/" target="_blank"><strong>Vanguard Appraisals, Inc</strong></a></p>
+<p>Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.</p></li>
 <li><p><a href="https://beacon.schneidercorp.com/" target="_blank"><strong>Beacon</strong></a> <strong>by Schneider Geospatial</strong></p>
 <p>This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.</p></li>
+<li><p><strong>Google Street View</strong></p>
+<p>To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.</p></li>
 </ul>
 <p>The Beacon website implemented restrictions that prohibits web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.</p>
 <p>We resolved to web scraping from the following websites;</p>
@@ -372,7 +280,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Polk County Assessor Website</li>
 </ul>
 <p>Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="../../images/MicrosoftTeams-image (1).png" class="img-fluid" width="436"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/no_image.png" class="img-fluid" width="436"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="naming-convention" class="level3">
 <h3 class="anchored" data-anchor-id="naming-convention">Naming Convention</h3>
@@ -383,13 +300,36 @@ ul.task-list li input[type="checkbox"] {
 <li>311 W Main St</li>
 </ul>
 <p><strong>Result</strong>: Z_H_311 W MAIN ST</p>
-<p>Z - Zillow</p>
-<p>G - Google</p>
-<p>V - Vanguard</p>
-<p>B - Beacon</p>
-<p>H - New Hampton</p>
-<p>D - Independence</p>
-<p>G - Grundy Center</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Z - Zillow</td>
+<td>H - New Hampton</td>
+</tr>
+<tr class="even">
+<td>G - Google</td>
+<td>D - Independence</td>
+</tr>
+<tr class="odd">
+<td>V - Vanguard</td>
+<td>G - Grundy Center</td>
+</tr>
+<tr class="even">
+<td>B - Beacon</td>
+<td>S - Slater</td>
+</tr>
+<tr class="odd">
+<td>W - WINVEST</td>
+<td>Des Moines</td>
+</tr>
+</tbody>
+</table>
 <p>During the data collection process, we encountered “address” inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2. Fortunately, the function used to retrieve Google images managed to run successfully, although it reported 50 errors related to these address variations, including both the dual house numbers and the presence of half signs. It is worth noting that even if one of the address numbers is removed or the 1/2 is eliminated (essentially removing the “/” sign), the image URL still leads to a valid Google image. In order to address this issue, it is possible to revisit the URLs and modify them to obtain images corresponding to these specific addresses, if necessary.</p>
 </section>
 <section id="web-scraping-technique" class="level3">
@@ -447,6 +387,92 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
+<section id="geographic-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="geographic-analysis">Geographic Analysis</h2>
+<p>One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.</p>
+<p>To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
+<p>More information <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping" target="_blank">here</a>.</p>
+<p><img src="../../images/siding_slater.png" class="img-fluid"></p>
+<p>We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.</p>
+<p>Click <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html" target="_blank">here</a> for more information.</p>
+<section id="tableau-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="tableau-dashboard">Tableau Dashboard</h3>
+<p><img src="../../images/Screen Shot 2023-07-06 at 9.55.27 PM.png" class="img-fluid"></p>
+<section id="tableau-dashboard-1" class="level4">
+<h4 class="anchored" data-anchor-id="tableau-dashboard-1"><a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html" target="_blank">Tableau Dashboard</a></h4>
+</section>
+</section>
+</section>
+<section id="demographic-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="demographic-analysis">Demographic Analysis</h2>
+<p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.</p>
+<ul>
+<li>Home ownership rate</li>
+<li>Population change</li>
+<li>Median household income</li>
+<li>Age of houses</li>
+<li>Median house values</li>
+</ul>
+<p>Using the infographics feature on ArcGIS Pro, we created community summary of Iowa state, Grundy center, Independence, and New Hampton respectively.</p>
+<p><strong>State of Iowa</strong></p>
+<p><img src="../../images/Iowa_community_summary.png" class="img-fluid" width="703"></p>
+<p><strong>Grundy Center</strong></p>
+<p><img src="../../images/grundy_center_community_summary (1).png" class="img-fluid" width="703"></p>
+<p><strong>Independence</strong></p>
+<p><img src="../../images/independence_community_summary.png" class="img-fluid" width="703"></p>
+<p><strong>New Hampton</strong></p>
+<p><img src="../../images/new_hampton_community_summary.png" class="img-fluid" width="703"></p>
+<p>To make a community summary infographic you can check <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
+<p>More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;</p>
+<ul>
+<li>Local spending pattern</li>
+<li>Median age of residents</li>
+<li>Population between 500 and 10,000</li>
+<li>Stable, shrinking or increasing population</li>
+<li>Presence of a school</li>
+<li>Communities with growing income base</li>
+</ul>
+<p>Using TidyVerse in R, the following graphs was created.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/all_population.png" class="img-fluid" width="498"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/all_percent_change.png" class="img-fluid" width="498"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/change_pop_cities.png" class="img-fluid" width="498"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/pop_projection_cities.png" class="img-fluid" width="498"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/home_ownership.png" class="img-fluid" width="498"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/med_house.png" class="img-fluid" width="498"></p>
+</div>
+</div>
+</div>
+<p><img src="../../images/demographics/median_income.png" class="img-fluid"></p>
+<p><img src="../../images/demographics/median_value.png" class="img-fluid"></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/vacancy_rate.png" class="img-fluid" width="498"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/vacant_reason.png" class="img-fluid" width="498"></p>
+</div>
+</div>
+</div>
+<p><img src="../../images/demographics/value_and_year_built.png" class="img-fluid" width="522"></p>
+</section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In conclusion, this project successfully achieved its objectives. A comprehensive literature review was conducted to explore the implementation of AI in planning and housing, providing valuable examples and insights. Study communities within the targeted population range were identified based on specific criteria, including population stability, the presence of a school, and median age of residents. Housing data, including images, was collected from reliable sources such as Google and county assessor websites.</p>
@@ -455,8 +481,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="recommendations" class="level2">
 <h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
 <ul>
-<li><p>Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is <strong>Beacon,</strong> second best is <strong>Google</strong>.</p>
-<p>In Year 2, utilize all the sources but consider using spider to scrape from Zillow, Beacon and Vanguard.</p></li>
+<li><p>Based on the images sources used in this project, which are Kaggle, Google Street View, Zillow, Vanguard, Beacon, County Assessor Office/websites, the best image source is <strong>Google</strong>.</p>
+<p>In Year 2, utilize county assessor websites as they provide valuable data for assessment purposes and assess to Zillow, Beacon, Vanguard, and so on.</p></li>
 <li><p>Box is best for storing images while Github is best for storing files. Google Drive will need to separately download images and files to run. Microsoft Teams is good for general quick sharing of information but not a great home for important documents.</p></li>
 <li><p><strong>Image Classification for Model Training</strong></p>
 <table class="table">
@@ -466,8 +492,8 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>If Image Classification,</strong></td>
-<td><strong>Recommendations</strong></td>
+<td><strong>If Image Classification is …</strong></td>
+<td><strong>then we recommend …</strong></td>
 </tr>
 <tr class="even">
 <td>Time consuming</td>
@@ -505,9 +531,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>More objectives to be considered for Year 2 of this project;</p>
 <ul>
-<li><p>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</p></li>
-<li><p>Create an application that can be used by cities.</p></li>
-<li><p>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</p></li>
+<li>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</li>
+<li>Create an application that can be used by cities.</li>
+<li>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</li>
 </ul>
 </section>
 <section id="data-source" class="level2">
