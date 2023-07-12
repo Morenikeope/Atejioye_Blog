@@ -249,6 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
 <p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
+<p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.</p>
 <section id="web-scraping" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
 <p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.</p>
@@ -279,7 +280,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Beacon</li>
 <li>Polk County Assessor Website</li>
 </ul>
-<p>Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered an issue with blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.</p>
+<p>Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered the following problems;</p>
+<ul>
+<li><p>Blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.</p></li>
+<li><p>“Address” inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2.</p></li>
+<li><p>Duplicate images with different addresses.</p></li>
+<li><p>Particular streets are not mapped.</p></li>
+<li><p>Images of inside of stores showing as a house image.</p></li>
+</ul>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -326,11 +334,10 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>W - WINVEST</td>
-<td>Des Moines</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>During the data collection process, we encountered “address” inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2. Fortunately, the function used to retrieve Google images managed to run successfully, although it reported 50 errors related to these address variations, including both the dual house numbers and the presence of half signs. It is worth noting that even if one of the address numbers is removed or the 1/2 is eliminated (essentially removing the “/” sign), the image URL still leads to a valid Google image. In order to address this issue, it is possible to revisit the URLs and modify them to obtain images corresponding to these specific addresses, if necessary.</p>
 </section>
 <section id="web-scraping-technique" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping-technique"><strong>Web Scraping Technique</strong></h3>
@@ -388,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Click <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html" target="_blank">here</a> for more information.</p>
 <section id="tableau-dashboard" class="level3">
 <h3 class="anchored" data-anchor-id="tableau-dashboard">Tableau Dashboard</h3>
-<p><img src="../../images/Screen Shot 2023-07-06 at 9.55.27 PM.png" class="img-fluid"></p>
+<p><img src="../../images/screenshot_dashboardnew.png" class="img-fluid" width="619"></p>
 <section id="tableau-dashboard-1" class="level4">
 <h4 class="anchored" data-anchor-id="tableau-dashboard-1"><a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/House%20Quality%20Dashboards/HouseQualityDashboard.html" target="_blank">Tableau Dashboard</a></h4>
 </section>
@@ -396,7 +403,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="demographic-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="demographic-analysis">Demographic Analysis</h2>
-<p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence. The following characteristics were used for the demographic profile of the communities.</p>
+<p>After consulting with our clients, we have selected specific attributes and demographic profiles of communities to examine.</p>
+<p>The following characteristics were used for the demographic profile of the communities.</p>
 <ul>
 <li>Home ownership rate</li>
 <li>Population change</li>
@@ -525,6 +533,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</li>
 <li>Create an application that can be used by cities.</li>
 <li>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</li>
+<li>Look more into how to use Geospatial Artificial Intelligence (GeoAI).</li>
 </ul>
 </section>
 <section id="data-source" class="level2">
