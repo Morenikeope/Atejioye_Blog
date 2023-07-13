@@ -155,8 +155,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a>
   <ul class="collapse">
   <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">Web Scraping</a></li>
-  <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link" data-scroll-target="#naming-convention">Naming Convention</a></li>
-  <li><a href="#web-scraping-technique" id="toc-web-scraping-technique" class="nav-link" data-scroll-target="#web-scraping-technique"><strong>Web Scraping Technique</strong></a></li>
+  <li><a href="#address-collection" id="toc-address-collection" class="nav-link" data-scroll-target="#address-collection"><strong>Address Collection</strong></a></li>
+  <li><a href="#image-collection" id="toc-image-collection" class="nav-link" data-scroll-target="#image-collection">Image Collection</a></li>
   </ul></li>
   <li><a href="#ai-models" id="toc-ai-models" class="nav-link" data-scroll-target="#ai-models">AI Models</a>
   <ul class="collapse">
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, recognizing the need for a more efficient approach to image collection of particular images of houses from Iowa, we turned to web scraping. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
+<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to webscrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
 <p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.</p>
 <section id="web-scraping" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
@@ -302,16 +302,52 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="naming-convention" class="level3">
-<h3 class="anchored" data-anchor-id="naming-convention">Naming Convention</h3>
-<p>To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address. For example,</p>
+<section id="address-collection" class="level3">
+<h3 class="anchored" data-anchor-id="address-collection"><strong>Address Collection</strong></h3>
 <ul>
-<li>Zillow</li>
-<li>New Hampton, Iowa</li>
-<li>311 W Main St</li>
+<li><p>Address Collection and Cleaning <strong>-</strong> <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">Address Collection</a></p>
+<p><img src="../../images/6beacon_select.png" class="img-fluid"></p></li>
 </ul>
-<p><strong>Result</strong>: Z_H_311 W MAIN ST</p>
+</section>
+<section id="image-collection" class="level3">
+<h3 class="anchored" data-anchor-id="image-collection">Image Collection</h3>
+<section id="scrape-google-images---google-image-scraping" class="level4">
+<h4 class="anchored" data-anchor-id="scrape-google-images---google-image-scraping">Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></h4>
+<pre><code># Ogden
+
+og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
+
+urls_start &lt;- og_data[, 1]
+
+urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")
+
+urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")
+
+# creates folder and downloads all images
+
+dir.create("ogden_google_images_folder")
+
+for(i in seq_along(urls_full_api_key)) {
+
+___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
+
+___ download.file(urls_full_api_key[i], file_path, mode = "wb")
+
+___ print(file_path)
+
+___ print(i)
+
+}</code></pre>
+</section>
+<section id="creating-google-api-links---google-api" class="level4">
+<h4 class="anchored" data-anchor-id="creating-google-api-links---google-api">Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></h4>
+<p><img src="../../images/10use_link.png" class="img-fluid"></p>
+</section>
+<section id="naming-convention" class="level4">
+<h4 class="anchored" data-anchor-id="naming-convention">Naming Convention</h4>
+<p>To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address.</p>
 <table class="table">
+<caption>For example,</caption>
 <thead>
 <tr class="header">
 <th>Source</th>
@@ -341,41 +377,13 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="web-scraping-technique" class="level3">
-<h3 class="anchored" data-anchor-id="web-scraping-technique"><strong>Web Scraping Technique</strong></h3>
 <ul>
-<li><p>Address Collection and Cleaning <strong>-</strong> <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">Address Collection</a></p>
-<p><img src="../../images/6beacon_select.png" class="img-fluid"></p></li>
-<li><p>Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></p>
-<p><img src="../../images/10use_link.png" class="img-fluid"></p></li>
-<li><p>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></p>
-<pre><code># Ogden
-
-og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
-
-urls_start &lt;- og_data[, 1]
-
-urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")
-
-urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")
-
-# creates folder and downloads all images
-
-dir.create("ogden_google_images_folder")
-
-for(i in seq_along(urls_full_api_key)) {
-
-___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
-
-___ download.file(urls_full_api_key[i], file_path, mode = "wb")
-
-___ print(file_path)
-
-___ print(i)
-
-}</code></pre></li>
+<li>Zillow</li>
+<li>New Hampton, Iowa</li>
+<li>311 W Main St</li>
 </ul>
+<p><strong>Result</strong>: Z_H_311 W MAIN ST_</p>
+</section>
 </section>
 </section>
 <section id="ai-models" class="level2">
