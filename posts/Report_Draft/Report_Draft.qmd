@@ -437,13 +437,11 @@ library(ggthemes)
 
 : Using the packages above, the following plots were made in R Studio:
 
-::: {layout-ncol="2"}
-![](/images/demographics/all_percent_change.png){width="498"}
+![](/images/demographics/all_percent_change.png){width="571"}
 
-![](/images/demographics/pop_projection_cities.png){width="498"}
+![](/images/demographics/pop_projection_cities.png){width="571"}
 
-![](/images/demographics/home_ownership.png){width="498"}
-:::
+![](/images/demographics/home_ownership.png){width="571"}
 
 ![](/images/demographics/median_income.png)
 
