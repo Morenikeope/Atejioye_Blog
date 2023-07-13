@@ -3,6 +3,7 @@ project:
   output-dir: docs
 website:
   title: "Home"
+  favicon: "/images/isu_logo.ico"
   description: "This blog serves as a platform where I document my experiences and achievements during my participation in the DSPG summer program. Through this personal blog, I aim to showcase my notable contributions and delve into the impactful work I have undertaken in the program."
   navbar:
     right:
