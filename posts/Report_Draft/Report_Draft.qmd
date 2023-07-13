@@ -252,7 +252,7 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 -   Exporting Predictions to a CSV on Address - [Export Predictions](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#exporting-predictions-to-a-csv-on-address){target="_blank"}
 
-![](/images/MicrosoftTeams-image.png){width="603"}
+![](/images/Endgame.png)
 
 ### [Guide to Housing Project AI Models](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html){target="_blank"}
 
@@ -368,7 +368,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation, 
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |------------------------------------|------------------------------------|
+    |----------------------------------------------------|------------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
