@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to webscrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
+<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
 <p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.</p>
 <section id="web-scraping" class="level3">
 <h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
@@ -339,14 +339,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="address-collection" class="level3">
 <h3 class="anchored" data-anchor-id="address-collection"><strong>Address Collection</strong></h3>
 <ul>
-<li><p>Address Collection and Cleaning <strong>-</strong> <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">Address Collection</a></p>
-<p><img src="../../images/6beacon_select.png" class="img-fluid"></p></li>
+<li><p>Brief explanation of Beacon and Vanguard as data sources.</p></li>
+<li><p>Scraping process for Beacon.</p></li>
+<li><p>Scraping process for Vanguard.</p></li>
+<li><p>Data Cleaning and Challenges encountered.</p></li>
+<li><p>Importance of obtaining accurate and reliable data from these sources.</p></li>
+<li><p>Link to more information <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">here</a>.</p></li>
 </ul>
+<p><img src="../../images/6beacon_select.png" class="img-fluid"></p>
 </section>
 <section id="image-collection" class="level3">
 <h3 class="anchored" data-anchor-id="image-collection">Image Collection</h3>
-<section id="scrape-google-images---google-image-scraping" class="level4">
-<h4 class="anchored" data-anchor-id="scrape-google-images---google-image-scraping">Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></h4>
+<ul>
+<li>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ogden</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -374,16 +380,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="creating-google-api-links---google-api" class="level4">
-<h4 class="anchored" data-anchor-id="creating-google-api-links---google-api">Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></h4>
+<ul>
+<li>Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></li>
+</ul>
 <p><img src="../../images/10use_link.png" class="img-fluid"></p>
-</section>
-<section id="naming-convention" class="level4">
-<h4 class="anchored" data-anchor-id="naming-convention">Naming Convention</h4>
-<p>To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address.</p>
+<ul>
+<li>Naming Convention</li>
+</ul>
+<p>To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source_City_Address_</p>
 <table class="table">
-<caption>For example,</caption>
 <thead>
 <tr class="header">
 <th>Source</th>
@@ -413,6 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<p>For example,</p>
 <ul>
 <li>Zillow</li>
 <li>New Hampton, Iowa</li>
@@ -421,11 +427,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Result</strong>: Z_H_311 W MAIN ST_</p>
 </section>
 </section>
-</section>
 <section id="ai-models" class="level2">
 <h2 class="anchored" data-anchor-id="ai-models">AI Models</h2>
 <p>This section demonstrates the potential of AI to recognize the quality of house.</p>
-<p>Details of the first attempt at creating an AI model can be found <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html" target="_blank">here</a>.</p>
+<p>Details of the first AI model can be found <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html" target="_blank">here</a>.</p>
 <ul>
 <li><p>Building a Binary Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model" target="_blank">Binary Image Classification</a></p></li>
 <li><p>Building a Multi-Category Image Classification AI Model - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-multi-category-image-classification-ai-model" target="_blank">Multi-Category Image Classification</a></p></li>
@@ -446,7 +451,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="geographic-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="geographic-analysis">Geographic Analysis</h2>
-<p>One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.</p>
+<p>Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.</p>
 <p>To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
 <p>More information <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping" target="_blank">here</a>.</p>
 <p><img src="../../images/siding_slater.png" class="img-fluid"></p>
@@ -593,6 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create an application that can be used by cities.</li>
 <li>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</li>
 <li>Look more into how to use Geospatial Artificial Intelligence (GeoAI).</li>
+<li>Create a sidewalk AI model.</li>
 </ul>
 </section>
 <section id="data-source" class="level2">

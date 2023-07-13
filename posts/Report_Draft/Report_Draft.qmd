@@ -264,7 +264,7 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 ## Geographic Analysis
 
-One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
+Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
 
 To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
 
@@ -404,6 +404,7 @@ More objectives to be considered for Year 2 of this project;
 -   Create an application that can be used by cities.
 -   Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.
 -   Look more into how to use Geospatial Artificial Intelligence (GeoAI).
+-   Create a sidewalk AI model.
 
 ## Data source
 
