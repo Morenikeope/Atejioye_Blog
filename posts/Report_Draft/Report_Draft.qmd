@@ -216,7 +216,7 @@ ___ print(i)
 
 #### Naming Convention
 
-To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source, City, Address.
+To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source_City_Address\_
 
 | Source       | City              |
 |--------------|-------------------|
@@ -238,7 +238,7 @@ To ensure convenient access to the images collected from various sources, we dev
 
 This section demonstrates the potential of AI to recognize the quality of house.
 
-Details of the first attempt at creating an AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
+Details of the first AI model can be found [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_week3/Week_Three.html){target="_blank"}.
 
 -   Building a Binary Image Classification AI Model - [Binary Image Classification](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#building-a-binary-image-classification-ai-model){target="_blank"}
 
@@ -368,7 +368,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |------------------------------------|------------------------------------|
+    |----------------------------------------------------|------------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
