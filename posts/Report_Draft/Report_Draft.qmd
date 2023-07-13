@@ -164,15 +164,25 @@ Based on the WINVEST project, we collected house images of Independence, New Ham
 
 ### **Address Collection**
 
--   Address Collection and Cleaning **-** [Address Collection](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}
+-   Brief explanation of Beacon and Vanguard as data sources.
 
-    ![](/images/6beacon_select.png)
+-   Scraping process for Beacon.
+
+-   Scraping process for Vanguard.
+
+-   Data Cleaning and Challenges encountered.
+
+-   Importance of obtaining accurate and reliable data from these sources.
+
+-   Link to more information [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}.
+
+![](/images/6beacon_select.png)
 
 ### Image Collection
 
 #### Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
-```         
+```{R, eval=FALSE}
 # Ogden
 
 og_data <- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
@@ -244,7 +254,7 @@ Details of the first attempt at creating an AI model can be found [here](https:/
 
 ![](/images/MicrosoftTeams-image.png){width="603"}
 
-### [Guide to Housing Project AI Models](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html){.uri}
+### [Guide to Housing Project AI Models](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html){target="_blank"}
 
 ![](/images/neural_network.png)
 

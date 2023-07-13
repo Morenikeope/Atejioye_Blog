@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -313,31 +347,33 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="image-collection">Image Collection</h3>
 <section id="scrape-google-images---google-image-scraping" class="level4">
 <h4 class="anchored" data-anchor-id="scrape-google-images---google-image-scraping">Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></h4>
-<pre><code># Ogden
-
-og_data &lt;- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
-
-urls_start &lt;- og_data[, 1]
-
-urls_full &lt;- paste(urls_start, "&amp;key=", sep = "")
-
-urls_full_api_key &lt;- paste(urls_full, api_key, sep = "")
-
-# creates folder and downloads all images
-
-dir.create("ogden_google_images_folder")
-
-for(i in seq_along(urls_full_api_key)) {
-
-___ file_path &lt;- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
-
-___ download.file(urls_full_api_key[i], file_path, mode = "wb")
-
-___ print(file_path)
-
-___ print(i)
-
-}</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ogden</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>og_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/GitHub/Housing/complete links/ogden_urls.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>urls_start <span class="ot">&lt;-</span> og_data[, <span class="dv">1</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>urls_full <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_start, <span class="st">"&amp;key="</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>urls_full_api_key <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_full, api_key, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># creates folder and downloads all images</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"ogden_google_images_folder"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(urls_full_api_key)) {</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>___ file_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"ogden_google_images_folder"</span>, <span class="fu">paste0</span>(<span class="st">"G_OG_"</span>, og_data[i,<span class="dv">6</span>], <span class="st">"_.png"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">download.file</span>(urls_full_api_key[i], file_path, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(file_path)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(i)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="creating-google-api-links---google-api" class="level4">
 <h4 class="anchored" data-anchor-id="creating-google-api-links---google-api">Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></h4>
@@ -400,7 +436,7 @@ ___ print(i)
 </ul>
 <p><img src="../../images/MicrosoftTeams-image.png" class="img-fluid" width="603"></p>
 <section id="guide-to-housing-project-ai-models" class="level3">
-<h3 class="anchored" data-anchor-id="guide-to-housing-project-ai-models"><a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html" class="uri">Guide to Housing Project AI Models</a></h3>
+<h3 class="anchored" data-anchor-id="guide-to-housing-project-ai-models"><a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_AI_guide_w9/AI_guide.html" target="_blank">Guide to Housing Project AI Models</a></h3>
 <p><img src="../../images/neural_network.png" class="img-fluid"></p>
 </section>
 <section id="confidence-level-and-accuracy-of-models" class="level3">
