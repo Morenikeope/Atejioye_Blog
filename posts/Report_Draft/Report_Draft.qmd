@@ -180,7 +180,7 @@ Out of our five scraping sites, we got images from Zillow and Google Street View
 
 -   Vanguard
 
-#### Naming Convention
+### Naming Convention
 
 Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is **source_city_address**. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter "D"and "H," respectively.
 
@@ -202,7 +202,7 @@ Here is an example of the naming convention in use:
 >
 > **Result**: Z_H_311 W MAIN ST\_
 
-#### Web Scraping Zillow
+### Web Scraping Zillow
 
 We scraped and downloaded image URLs for For Sale houses and recently Sold houses on Zillow. In total, we could scrape about one hundred images from Zillow. There were many more images available on Zillow that we couldn't scrape.
 
@@ -349,7 +349,7 @@ Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHou
 
 ## Demographic Analysis
 
-After consulting with our clients, we have selected specific attributes and demographic profiles of communities to examine.
+Identifying housing issues in a rural community requires more than just describing the physical and locational characteristics of its housing stock. A more complete understanding of local housing issues also requires consideration of the community's residents. After consulting with our clients, we selected a set of demographic and economic measures to characterize the local population in our study communities. These indicators allow communties to put their local housing conditions within a broader context of peer cities.
 
 The following characteristics were used for the demographic profile of the communities.
 

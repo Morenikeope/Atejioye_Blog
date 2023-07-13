@@ -191,6 +191,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-is-web-scraping" id="toc-what-is-web-scraping" class="nav-link" data-scroll-target="#what-is-web-scraping">What is Web Scraping?</a></li>
   <li><a href="#address-collection" id="toc-address-collection" class="nav-link" data-scroll-target="#address-collection">Address Collection</a></li>
   <li><a href="#image-collection" id="toc-image-collection" class="nav-link" data-scroll-target="#image-collection">Image Collection</a></li>
+  <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link" data-scroll-target="#naming-convention">Naming Convention</a></li>
+  <li><a href="#web-scraping-zillow" id="toc-web-scraping-zillow" class="nav-link" data-scroll-target="#web-scraping-zillow">Web Scraping Zillow</a></li>
   <li><a href="#attribute-collection" id="toc-attribute-collection" class="nav-link" data-scroll-target="#attribute-collection">Attribute Collection</a></li>
   </ul></li>
   <li><a href="#ai-models" id="toc-ai-models" class="nav-link" data-scroll-target="#ai-models">AI Models</a>
@@ -234,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Objectives:</strong></p>
 <ul>
 <li><p>Conduct a literature review to examine examples of AI applications in planning and housing.</p></li>
-<li><p>identify study communities and collect data about the communities.</p></li>
+<li><p>Identify study communities and collect data about the communities.</p></li>
 <li><p>Collect housing data, including images, from existing sources such as realtor websites, Google Street View and county assessor websites.</p></li>
 <li><p>Collect data on housing age, number of bedrooms, square footage, and assessed value.</p></li>
 <li><p>Utilize roof, gutter, siding, and landscape condition as part of AI analysis to identify homes that may qualify for community assistance programs.</p></li>
@@ -344,8 +346,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>WINVEST</p></li>
 <li><p>Vanguard</p></li>
 </ul>
-<section id="naming-convention" class="level4">
-<h4 class="anchored" data-anchor-id="naming-convention">Naming Convention</h4>
+</section>
+<section id="naming-convention" class="level3">
+<h3 class="anchored" data-anchor-id="naming-convention">Naming Convention</h3>
 <p>Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is <strong>source_city_address</strong>. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter “D”and “H,” respectively.</p>
 <table class="table">
 <thead>
@@ -385,8 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Result</strong>: Z_H_311 W MAIN ST_</p>
 </blockquote>
 </section>
-<section id="web-scraping-zillow" class="level4">
-<h4 class="anchored" data-anchor-id="web-scraping-zillow">Web Scraping Zillow</h4>
+<section id="web-scraping-zillow" class="level3">
+<h3 class="anchored" data-anchor-id="web-scraping-zillow">Web Scraping Zillow</h3>
 <p>We scraped and downloaded image URLs for For Sale houses and recently Sold houses on Zillow. In total, we could scrape about one hundred images from Zillow. There were many more images available on Zillow that we couldn’t scrape.</p>
 <p><strong>Challenges and Limitations of Scraping Zillow</strong></p>
 <ul>
@@ -395,7 +398,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Lazy loading. The term lazy loading refers to how a webpage loads its data. Because Zillow is lazy, it only loads the image data when the user scrolls down the page. When web scraping, only the loaded images are available. A more complicated process is needed to scrape a lazily loaded webpage.</p></li>
 </ul>
 <p>Zillow is a great source for image data if you can get around the lazy loading issue and grab all images from the carousel. Zillow images for For Sale homes are more recent than other sources.</p>
-</section>
 <section id="scraping-google-street-view" class="level4">
 <h4 class="anchored" data-anchor-id="scraping-google-street-view">Scraping Google Street View</h4>
 <p>A Google API key is required to scrape images from Google Street View. It is included in the image URL to allow viewing of a specific house.</p>
@@ -508,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="demographic-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="demographic-analysis">Demographic Analysis</h2>
-<p>After consulting with our clients, we have selected specific attributes and demographic profiles of communities to examine.</p>
+<p>Identifying housing issues in a rural community requires more than just describing the physical and locational characteristics of its housing stock. A more complete understanding of local housing issues also requires consideration of the community’s residents. After consulting with our clients, we selected a set of demographic and economic measures to characterize the local population in our study communities. These indicators allow communties to put their local housing conditions within a broader context of peer cities.</p>
 <p>The following characteristics were used for the demographic profile of the communities.</p>
 <ul>
 <li>Home ownership rate</li>
