@@ -94,7 +94,7 @@ The image below depicts our project plan, outlining the strategies and actions w
 
 ## Data Collection
 
-At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to webscrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
+At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
 
 Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.
 
@@ -180,7 +180,7 @@ Based on the WINVEST project, we collected house images of Independence, New Ham
 
 ### Image Collection
 
-#### Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
+-   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
 ```{R, eval=FALSE}
 # Ogden
@@ -210,11 +210,11 @@ ___ print(i)
 }
 ```
 
-#### Creating Google API Links - [Google API](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links){target="_blank"}
+-   Creating Google API Links - [Google API](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links){target="_blank"}
 
 ![](/images/10use_link.png)
 
-#### Naming Convention
+-   Naming Convention
 
 To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source_City_Address\_
 
@@ -226,7 +226,7 @@ To ensure convenient access to the images collected from various sources, we dev
 | B - Beacon   | S - Slater        |
 | W - WINVEST  |                   |
 
-: For example,
+For example,
 
 -   Zillow
 -   New Hampton, Iowa
@@ -264,7 +264,7 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 ## Geographic Analysis
 
-One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters etc. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
+One objective that was later included in the project was using map to display AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition. It is also a form of spatial modeling.
 
 To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
 
@@ -368,7 +368,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |----------------------------------------------------|------------------------------------------|
+    |------------------------------------|------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
