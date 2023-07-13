@@ -306,8 +306,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.-</p></li>
 <li><p><a href="https://beacon.schneidercorp.com/" target="_blank"><strong>Beacon</strong></a> <strong>by Schneider Geospatial</strong></p>
 <p>This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.</p></li>
-<li><p><strong>Google Street View</strong></p>
-<p>To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.</p></li>
+<li><p><a href="https://www.google.com/maps/@42.0275015,-93.6351493,14z?entry=ttu" target="_blank"><strong>Google Street View</strong></a></p>
+<p>Google Street View is a feature that provides 360-degree panoramic views of streets and locations worldwide. It allows users to virtually explore places, landmarks, and even remote areas, offering a unique visual experience from the comfort of their screens.</p></li>
 </ul>
 <p>Upon further reflection, we realized that Zillow owns Trulia. The major difference in the two sites is the Zestimate provided on Zillow. Because we were interested in the housing value, we chose to scrape Zillow out of the two.</p>
 <p>The following are the sites we did scrape:</p>
@@ -332,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To fix this file format, we used Excel’s Text-to-Columns tool to organize text, and Excel functions to separate and combine sections, and the Excel Find and Replace tool to remove unwanted characters.</p>
 <p>In addition to re-formatting data, it was also necessary to create links for the Google Street View image collection process. Below is an example of a link to a Google Street View Image (excluding Google API key). To create links, Excel functions were used to concatenate the beginning part of the links (https://maps.googleapis.com/maps/api/streetview?size=800x800&amp;location=), the address (303+I+AVE,+GRUNDY+CENTER+IOWA) and Google API key.</p>
 <p><strong>https://maps.googleapis.com/maps/api/streetview?size=800x800&amp;location=303+I+AVE,+GRUNDY+CENTER+IOWA</strong></p>
-<p>These addresses were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn’t be able to pull the images.</p>
+<p>The addresses in the CSV files were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn’t be able to pull the images.</p>
 <p>Link to more information <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">here</a>.</p>
 </section>
 <section id="image-collection" class="level3">
@@ -591,8 +591,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Image Classification for Model Training</strong></p>
 <table class="table">
 <colgroup>
-<col style="width: 55%">
-<col style="width: 44%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -637,11 +637,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>More objectives to be considered for Year 2 of this project;</p>
 <ul>
-<li>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</li>
-<li>Create an application that can be used by cities.</li>
-<li>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</li>
-<li>Look more into how to use Geospatial Artificial Intelligence (GeoAI).</li>
-<li>Create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood.</li>
+<li><p>Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.</p></li>
+<li><p>Create an application that can be used by cities.</p></li>
+<li><p>Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.</p></li>
+<li><p>Look more into how to use Geospatial Artificial Intelligence (GeoAI).</p></li>
+<li><p>Create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood.</p></li>
 </ul>
 <p><img src="../../images/drone_to_GIS.png" class="img-fluid"></p>
 </section>

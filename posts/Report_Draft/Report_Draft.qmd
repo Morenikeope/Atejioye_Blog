@@ -130,9 +130,9 @@ Before starting any web scraping, our team had a plan to scrape the following we
 
     This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.
 
--   **Google Street View**
+-   [**Google Street View**](https://www.google.com/maps/@42.0275015,-93.6351493,14z?entry=ttu){target="_blank"}
 
-    To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.
+    Google Street View is a feature that provides 360-degree panoramic views of streets and locations worldwide. It allows users to virtually explore places, landmarks, and even remote areas, offering a unique visual experience from the comfort of their screens.
 
 Upon further reflection, we realized that Zillow owns Trulia. The major difference in the two sites is the Zestimate provided on Zillow. Because we were interested in the housing value, we chose to scrape Zillow out of the two.
 
@@ -164,7 +164,7 @@ In addition to re-formatting data, it was also necessary to create links for the
 
 **https://maps.googleapis.com/maps/api/streetview?size=800x800&location=303+I+AVE,+GRUNDY+CENTER+IOWA**
 
-These addresses were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn't be able to pull the images.
+The addresses in the CSV files were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn't be able to pull the images.
 
 Link to more information [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}.
 
@@ -433,7 +433,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation, 
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |----------------------------------------------------|------------------------------------------|
+    |------------------------------------|------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
@@ -470,9 +470,13 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation, 
 More objectives to be considered for Year 2 of this project;
 
 -   Could we use AI to determine which communities could benefit most from our project? If we tell it what characteristics of communities make it cause for concern, it could draw the conclusions for us and determine which communities we would want to reach out to.
+
 -   Create an application that can be used by cities.
+
 -   Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.
+
 -   Look more into how to use Geospatial Artificial Intelligence (GeoAI).
+
 -   Create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood.
 
 ![](/images/drone_to_GIS.png)
