@@ -224,7 +224,7 @@ As discussed earlier, the address data scraped from Vanguard and Beacon was clea
 
 Here is an example of the code to download the image from Google Street View.
 
-```{python, eval = FALSE}
+```{R, eval = FALSE}
 
 data <- read.csv("file_path")
 
@@ -327,7 +327,7 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 ![](/images/confidencelevelnew.png)
 
-## Geographic Analysis
+## Geographic Visualizations
 
 Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
 

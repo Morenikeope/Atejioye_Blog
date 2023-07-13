@@ -188,16 +188,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
   <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a>
   <ul class="collapse">
-  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">Web Scraping</a></li>
-  <li><a href="#address-collection" id="toc-address-collection" class="nav-link" data-scroll-target="#address-collection"><strong>Address Collection</strong></a></li>
+  <li><a href="#what-is-web-scraping" id="toc-what-is-web-scraping" class="nav-link" data-scroll-target="#what-is-web-scraping">What is Web Scraping?</a></li>
+  <li><a href="#address-collection" id="toc-address-collection" class="nav-link" data-scroll-target="#address-collection">Address Collection</a></li>
   <li><a href="#image-collection" id="toc-image-collection" class="nav-link" data-scroll-target="#image-collection">Image Collection</a></li>
+  <li><a href="#attribute-collection" id="toc-attribute-collection" class="nav-link" data-scroll-target="#attribute-collection">Attribute Collection</a></li>
   </ul></li>
   <li><a href="#ai-models" id="toc-ai-models" class="nav-link" data-scroll-target="#ai-models">AI Models</a>
   <ul class="collapse">
   <li><a href="#guide-to-housing-project-ai-models" id="toc-guide-to-housing-project-ai-models" class="nav-link" data-scroll-target="#guide-to-housing-project-ai-models">Guide to Housing Project AI Models</a></li>
   <li><a href="#confidence-level-and-accuracy-of-models" id="toc-confidence-level-and-accuracy-of-models" class="nav-link" data-scroll-target="#confidence-level-and-accuracy-of-models">Confidence Level and Accuracy of Models</a></li>
   </ul></li>
-  <li><a href="#geographic-analysis" id="toc-geographic-analysis" class="nav-link" data-scroll-target="#geographic-analysis">Geographic Analysis</a>
+  <li><a href="#geographic-visualizations" id="toc-geographic-visualizations" class="nav-link" data-scroll-target="#geographic-visualizations">Geographic Visualizations</a>
   <ul class="collapse">
   <li><a href="#tableau-dashboard" id="toc-tableau-dashboard" class="nav-link" data-scroll-target="#tableau-dashboard">Tableau Dashboard</a></li>
   </ul></li>
@@ -285,109 +286,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<p>At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
-<p>Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.</p>
-<section id="web-scraping" class="level3">
-<h3 class="anchored" data-anchor-id="web-scraping">Web Scraping</h3>
-<p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.</p>
-<p><img src="../../images/zillow.png" class="img-fluid"></p>
-<p>The plan was to collect house images from the following websites;</p>
+<p>We first gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. Kaggle is a website for hosting and sharing datasets. This website has many useful datasets for building AI models, which is why we decided to use images from Kaggle to aid in the initial AI model building process.</p>
+<p>However, since we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.</p>
+<p>Based on the WINVEST project, the team decided to web scrape housing images and data from the communities of Grundy Center, New Hampton and Independence.</p>
+<section id="what-is-web-scraping" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-web-scraping">What is Web Scraping?</h3>
+<p>Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching.</p>
+<p>Before starting any web scraping, our team had a plan to scrape the following websites for image, address, and attribute data:</p>
 <ul>
 <li><p><a href="https://www.zillow.com/?utm_medium=cpc&amp;utm_source=google&amp;utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&amp;semQue=null&amp;gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE" target="_blank"><strong>Zillow</strong></a></p>
 <p>Zillow is an online platform and app for real estate that allows users to search for homes, view property listings, and access data on home values and market trends.</p></li>
 <li><p><a href="https://www.trulia.com/" target="_blank"><strong>Trulia</strong></a></p>
 <p>Trulia is another online platform and app for real estate that helps users find homes, apartments, and other property listings, and provides information on neighborhoods and market trends.</p></li>
-<li><p><a href="https://www.realtor.com/" target="_blank"><strong>realtor.com</strong></a></p>
+<li><p><a href="https://www.realtor.com/" target="_blank"><strong>Realtor.com</strong></a></p>
 <p>Realtor.com is a website and app that offers a comprehensive database of property listings, allowing users to search for homes, apartments, and other real estate options. It also provides resources for finding real estate agents.</p></li>
 <li><p><strong>County Assessor Websites</strong></p>
 <p>These are online portals provided by local government entities that offer property-related information, including property records, tax assessments, and maps. Users can access details about property ownership and tax information.</p></li>
 <li><p><a href="https://www.iowaassessors.com/" target="_blank"><strong>Vanguard Appraisals, Inc</strong></a></p>
-<p>Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.</p></li>
+<p>Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.-</p></li>
 <li><p><a href="https://beacon.schneidercorp.com/" target="_blank"><strong>Beacon</strong></a> <strong>by Schneider Geospatial</strong></p>
 <p>This is a software platform used for property assessment and tax administration. It helps government agencies manage property data, valuation processes, and tax assessments by offering geospatial mapping, data analytics, and reporting capabilities.</p></li>
 <li><p><strong>Google Street View</strong></p>
 <p>To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.</p></li>
 </ul>
-<p>The Beacon website implemented restrictions that prohibits web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.</p>
-<p>We resolved to web scraping from the following websites;</p>
+<p>Upon further reflection, we realized that Zillow owns Trulia. The major difference in the two sites is the Zestimate provided on Zillow. Because we were interested in the housing value, we chose to scrape Zillow out of the two.</p>
+<p>The following are the sites we did scrape:</p>
 <ul>
 <li>Zillow</li>
-<li>Google Street View</li>
+<li>Polk County Assessor Website</li>
 <li>Vanguard</li>
 <li>Beacon</li>
-<li>Polk County Assessor Website</li>
+<li>Google Street View</li>
 </ul>
-<p>Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered the following problems;</p>
-<ul>
-<li><p>Blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.</p></li>
-<li><p>“Address” inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2.</p></li>
-<li><p>Duplicate images with different addresses.</p></li>
-<li><p>Particular streets are not mapped.</p></li>
-<li><p>Images of inside of stores showing as a house image.</p></li>
-</ul>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/MicrosoftTeams-image (1).png" class="img-fluid" width="436"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/no_image.png" class="img-fluid" width="436"></p>
-</div>
-</div>
-</div>
 </section>
 <section id="address-collection" class="level3">
-<h3 class="anchored" data-anchor-id="address-collection"><strong>Address Collection</strong></h3>
+<h3 class="anchored" data-anchor-id="address-collection">Address Collection</h3>
+<p>Vanguard has a GIS tool available that allowed us to select portions of cities and download addresses and parcel numbers. Only data for Independence was available through Vanguard. A downside to this method was that Vanguard limits the number of parcels we can select for download at a time.</p>
+<p>Beacon has more protection against web scraping than Vanguard. However, web scraping is necessary for the automation of downloading data on this website, as the GIS tool is not available. To scrape addresses and parcel numbers, and other house information for the remaining cities, we used the <a href="https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah">Instant Data Scraper Tool</a>. This scraper provided us with CSV files of scraped data from Beacon.</p>
+<p>Once the data had been scraped, we found that the CSV files provided us with a format that was not ideal.</p>
+<p>Examples of issues we encountered with the CSV files:</p>
 <ul>
-<li><p>Brief explanation of Beacon and Vanguard as data sources.</p></li>
-<li><p>Scraping process for Beacon.</p></li>
-<li><p>Scraping process for Vanguard.</p></li>
-<li><p>Data Cleaning and Challenges encountered.</p></li>
-<li><p>Importance of obtaining accurate and reliable data from these sources.</p></li>
-<li><p>Link to more information <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">here</a>.</p></li>
+<li><p>Many of the cells contained hidden characters.</p></li>
+<li><p>New lines within the cells.</p></li>
 </ul>
-<p><img src="../../images/6beacon_select.png" class="img-fluid"></p>
+<p>To fix this file format, we used Excel’s Text-to-Columns tool to organize text, and Excel functions to separate and combine sections, and the Excel Find and Replace tool to remove unwanted characters.</p>
+<p>In addition to re-formatting data, it was also necessary to create links for the Google Street View image collection process. Below is an example of a link to a Google Street View Image (excluding Google API key). To create links, Excel functions were used to concatenate the beginning part of the links (https://maps.googleapis.com/maps/api/streetview?size=800x800&amp;location=), the address (303+I+AVE,+GRUNDY+CENTER+IOWA) and Google API key.</p>
+<p><strong>https://maps.googleapis.com/maps/api/streetview?size=800x800&amp;location=303+I+AVE,+GRUNDY+CENTER+IOWA</strong></p>
+<p>These addresses were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn’t be able to pull the images.</p>
+<p>Link to more information <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning" target="_blank">here</a>.</p>
 </section>
 <section id="image-collection" class="level3">
 <h3 class="anchored" data-anchor-id="image-collection">Image Collection</h3>
+<p>Out of our five scraping sites, we got images from Zillow and Google Street View. Both sites presented challenges in gathering images. Because of the challenges, we decided to use WINVEST photos as well. In total, the image data came from four sites:</p>
 <ul>
-<li>Scrape Google Images - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">Google Image Scraping</a></li>
+<li><p>Zillow</p></li>
+<li><p>Google Street View</p></li>
+<li><p>WINVEST</p></li>
+<li><p>Vanguard</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ogden</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>og_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/GitHub/Housing/complete links/ogden_urls.csv"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>urls_start <span class="ot">&lt;-</span> og_data[, <span class="dv">1</span>]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>urls_full <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_start, <span class="st">"&amp;key="</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>urls_full_api_key <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_full, api_key, <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># creates folder and downloads all images</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"ogden_google_images_folder"</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(urls_full_api_key)) {</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>___ file_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"ogden_google_images_folder"</span>, <span class="fu">paste0</span>(<span class="st">"G_OG_"</span>, og_data[i,<span class="dv">6</span>], <span class="st">"_.png"</span>))</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">download.file</span>(urls_full_api_key[i], file_path, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(file_path)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(i)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Creating Google API Links - <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">Google API</a></li>
-</ul>
-<p><img src="../../images/10use_link.png" class="img-fluid"></p>
-<ul>
-<li>Naming Convention</li>
-</ul>
-<p>To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source_City_Address_</p>
+<section id="naming-convention" class="level4">
+<h4 class="anchored" data-anchor-id="naming-convention">Naming Convention</h4>
+<p>Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is <strong>source_city_address</strong>. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter “D”and “H,” respectively.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -418,13 +377,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>For example,</p>
-<ul>
-<li>Zillow</li>
-<li>New Hampton, Iowa</li>
-<li>311 W Main St</li>
-</ul>
+<p>Here is an example of the naming convention in use:</p>
+<blockquote class="blockquote">
+<p>Source: Zillow</p>
+<p>City: New Hampton, Iowa</p>
+<p>Address: 311 W Main St</p>
 <p><strong>Result</strong>: Z_H_311 W MAIN ST_</p>
+</blockquote>
+</section>
+<section id="web-scraping-zillow" class="level4">
+<h4 class="anchored" data-anchor-id="web-scraping-zillow">Web Scraping Zillow</h4>
+<p>We scraped and downloaded image URLs for For Sale houses and recently Sold houses on Zillow. In total, we could scrape about one hundred images from Zillow. There were many more images available on Zillow that we couldn’t scrape.</p>
+<p><strong>Challenges and Limitations of Scraping Zillow</strong></p>
+<ul>
+<li><p>Good images are only available for For Sale and recently Sold houses. Other house images on Zillow are taken from Google.</p></li>
+<li><p>Images are stored in a carousel. The only image we could scrape was the first, which wasn’t always an image of the exterior.</p></li>
+<li><p>Lazy loading. The term lazy loading refers to how a webpage loads its data. Because Zillow is lazy, it only loads the image data when the user scrolls down the page. When web scraping, only the loaded images are available. A more complicated process is needed to scrape a lazily loaded webpage.</p></li>
+</ul>
+<p>Zillow is a great source for image data if you can get around the lazy loading issue and grab all images from the carousel. Zillow images for For Sale homes are more recent than other sources.</p>
+</section>
+<section id="scraping-google-street-view" class="level4">
+<h4 class="anchored" data-anchor-id="scraping-google-street-view">Scraping Google Street View</h4>
+<p>A Google API key is required to scrape images from Google Street View. It is included in the image URL to allow viewing of a specific house.</p>
+<p>As discussed earlier, the address data scraped from Vanguard and Beacon was cleaned and stored in CSV files to create the image URLs for use with Google Street View. We wrote code to open each image URL in the CSV file and download the image.</p>
+<p>Here is an example of the code to download the image from Google Street View.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"file_path"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>urls_start <span class="ot">&lt;-</span> data[, <span class="dv">1</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>urls_full <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_start, “<span class="sc">&amp;</span><span class="at">key=</span>”, <span class="at">sep =</span> ““)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>urls_full_api_key <span class="ot">&lt;-</span> <span class="fu">paste</span>(urls_full, api_key, <span class="at">sep =</span> ““)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># creates folder and downloads all images</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(“google_images_folder_name”)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(urls_full_api_key)) {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>___ file_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(“google_images_folder_name”, <span class="fu">paste0</span>(“image_name”, data[i,<span class="dv">6</span>], “_.png”))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">download.file</span>(urls_full_api_key[i], file_path, <span class="at">mode =</span> “wb”)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(file_path)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>___ <span class="fu">print</span>(i)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Click <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links" target="_blank">here</a> for more information.</p>
+<p><strong>Challenges of Scraping Google Street View</strong></p>
+<p>During the process of gathering images from Google Street View, we encountered the following problems:</p>
+<ul>
+<li><p>Image downloading takes time. It takes upwards of an hour for a city of 2,000.</p></li>
+<li><p>Blurred houses. Certain homeowners request Google to intentionally blur their residences on Google Street View to protect their privacy. Such images were ignored.</p></li>
+<li><p>Address inconsistencies in Independence that caused errors when scraping. Some houses listed multiple house numbers, such as 100/101, while others had addresses like 100 1/2.</p></li>
+<li><p>Duplicate images for different addresses.</p></li>
+<li><p>Particular streets were not mapped, particularly in New Hampton, resulting in no image available.</p></li>
+<li><p>Images of inside of stores showing as an exterior house image.</p></li>
+</ul>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/MicrosoftTeams-image (1).png" class="img-fluid" width="436"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/no_image.png" class="img-fluid" width="436"></p>
+</div>
+</div>
+</div>
+<p>Click <a href="https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images" target="_blank">here</a> for more information on collecting images from Google Street View.</p>
+</section>
+</section>
+<section id="attribute-collection" class="level3">
+<h3 class="anchored" data-anchor-id="attribute-collection">Attribute Collection</h3>
+<section id="using-a-spider-to-collect-vanguard-information" class="level4">
+<h4 class="anchored" data-anchor-id="using-a-spider-to-collect-vanguard-information">Using a Spider to Collect Vanguard Information</h4>
+<p>A spider is an automated version of web scraping that automatically goes page by page on a website. A spider reduces manual involvement in the scraping process and makes it more efficient.</p>
+<p>Aaron Case, our friend on the AI Grocery Team, built us a spider to scrape Vanguard data. We were able to grab the following information from Vanguard:</p>
+<ul>
+<li><p>Parcel number</p></li>
+<li><p>Image URL</p></li>
+<li><p>House style</p></li>
+<li><p>Year built</p></li>
+<li><p>Square footage</p></li>
+<li><p>Appraised value</p></li>
+</ul>
+<p>Click <a href="https://cyberspeedac.github.io/Aaron-Case-DSPG-Blog/posts/Aaron_C_MultiWeek/Aaron_C_Spiders.html" target="_blank">here</a> for more information on how Spider works.</p>
+</section>
 </section>
 </section>
 <section id="ai-models" class="level2">
@@ -449,8 +490,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="../../images/confidencelevelnew.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="geographic-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="geographic-analysis">Geographic Analysis</h2>
+<section id="geographic-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="geographic-visualizations">Geographic Visualizations</h2>
 <p>Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.</p>
 <p>To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
 <p>More information <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping" target="_blank">here</a>.</p>
@@ -550,8 +591,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Image Classification for Model Training</strong></p>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 55%">
+<col style="width: 44%">
 </colgroup>
 <tbody>
 <tr class="odd">
