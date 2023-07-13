@@ -200,11 +200,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#guide-to-housing-project-ai-models" id="toc-guide-to-housing-project-ai-models" class="nav-link" data-scroll-target="#guide-to-housing-project-ai-models">Guide to Housing Project AI Models</a></li>
   <li><a href="#confidence-level-and-accuracy-of-models" id="toc-confidence-level-and-accuracy-of-models" class="nav-link" data-scroll-target="#confidence-level-and-accuracy-of-models">Confidence Level and Accuracy of Models</a></li>
   </ul></li>
-  <li><a href="#geographic-visualizations" id="toc-geographic-visualizations" class="nav-link" data-scroll-target="#geographic-visualizations">Geographic Visualizations</a>
+  <li><a href="#geographic-visualization" id="toc-geographic-visualization" class="nav-link" data-scroll-target="#geographic-visualization">Geographic Visualization</a>
   <ul class="collapse">
+  <li><a href="#what-is-gis-and-how-is-it-used-in-this-project" id="toc-what-is-gis-and-how-is-it-used-in-this-project" class="nav-link" data-scroll-target="#what-is-gis-and-how-is-it-used-in-this-project">What is GIS and how is it used in this project?</a></li>
   <li><a href="#tableau-dashboard" id="toc-tableau-dashboard" class="nav-link" data-scroll-target="#tableau-dashboard">Tableau Dashboard</a></li>
   </ul></li>
-  <li><a href="#demographic-analysis" id="toc-demographic-analysis" class="nav-link" data-scroll-target="#demographic-analysis">Demographic Analysis</a></li>
+  <li><a href="#demographic-analysis" id="toc-demographic-analysis" class="nav-link" data-scroll-target="#demographic-analysis">Demographic Analysis</a>
+  <ul class="collapse">
+  <li><a href="#profiling-using-r-studio" id="toc-profiling-using-r-studio" class="nav-link" data-scroll-target="#profiling-using-r-studio">Profiling Using R Studio</a></li>
+  <li><a href="#collecting-data-to-identify-study-communities" id="toc-collecting-data-to-identify-study-communities" class="nav-link" data-scroll-target="#collecting-data-to-identify-study-communities">Collecting Data to Identify Study Communities</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data source</a></li>
@@ -492,14 +497,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="../../images/confidencelevelnew.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="geographic-visualizations" class="level2">
-<h2 class="anchored" data-anchor-id="geographic-visualizations">Geographic Visualizations</h2>
-<p>Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.</p>
-<p>To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
+<section id="geographic-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="geographic-visualization">Geographic Visualization</h2>
+<section id="what-is-gis-and-how-is-it-used-in-this-project" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-gis-and-how-is-it-used-in-this-project">What is GIS and how is it used in this project?</h3>
+<p>A Geographic Information System (GIS) is a spatial system that is used to analyze, display and store geographically referenced information. GIS uses data that is attached to a unique location and can be useful for identifying problems and trends.</p>
+<p>More information <a href="https://www.esri.com/en-us/what-is-gis/overview">here</a>.</p>
+<p>Mapping our house quality output using GIS enables us to visualize the AI-model output for vegetation, siding, gutters, and roof characteristics. This will allow us to visualize locations of houses in good conditions versus poor condition.</p>
+<p>In the future, it could be beneficial to utilize statistical analysis techniques to understand the spatial relationship between data and visualize clusters.</p>
+<section id="geocoding-addresses" class="level4">
+<h4 class="anchored" data-anchor-id="geocoding-addresses">Geocoding Addresses</h4>
+<p>To visualize addresses for the communities, first we needed to geocode (provide latitude and longitude for each address). There are many types of software that can be used to geocode addresses.</p>
+<p>QGIS is an open-source GIS software. We first geocoded addresses by using the QGIS Plugin called MMQGIS. When using this method, the plugin would crash and fail to geocode all the addresses. Because of this, we geocoded addresses using R instead. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
+<p>Below is an image of a CSV file with addresses latitude and longitude.</p>
+<p><img src="../../images/ogden_geocoded_addresses.png" class="img-fluid"></p>
 <p>More information <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping" target="_blank">here</a>.</p>
 <p><img src="../../images/siding_slater.png" class="img-fluid"></p>
 <p>We later realized we can use Tableau for better data connections and visualizations. We created a step by step process for creating a tableau dashboard showing the output from the AI Models and mapping it to the already geocoded addresses.</p>
 <p>Click <a href="https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHouseData/MappingHouseQuality.html" target="_blank">here</a> for more information.</p>
+</section>
+</section>
 <section id="tableau-dashboard" class="level3">
 <h3 class="anchored" data-anchor-id="tableau-dashboard">Tableau Dashboard</h3>
 <p><img src="../../images/screenshot_dashboardnew.png" class="img-fluid" width="619"></p>
@@ -511,46 +528,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="demographic-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="demographic-analysis">Demographic Analysis</h2>
 <p>Identifying housing issues in a rural community requires more than just describing the physical and locational characteristics of its housing stock. A more complete understanding of local housing issues also requires consideration of the community’s residents. After consulting with our clients, we selected a set of demographic and economic measures to characterize the local population in our study communities. These indicators allow communties to put their local housing conditions within a broader context of peer cities.</p>
-<p>The following characteristics were used for the demographic profile of the communities.</p>
+<section id="profiling-using-r-studio" class="level3">
+<h3 class="anchored" data-anchor-id="profiling-using-r-studio">Profiling Using R Studio</h3>
+<p>We constructed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are but are not limited to, data on <strong>age</strong>, <strong>race</strong>, <strong>ethnicity</strong>, <strong>gender</strong>, <strong>marital status</strong>, <strong>income</strong>, <strong>education</strong>, and <strong>employment</strong>.</p>
+<p>The following demographic data were used for the demographic profile of the communities:</p>
 <ul>
-<li>Home ownership rate</li>
-<li>Population change</li>
-<li>Median household income</li>
-<li>Age of houses</li>
-<li>Median house values</li>
+<li><p>Population.</p></li>
+<li><p>Median income</p></li>
+<li><p>Median home value</p></li>
+<li><p>Median year home built</p></li>
+<li><p>Home ownership rates</p></li>
 </ul>
-<p>Using the infographics feature on ArcGIS Pro, we created community summary of the state of Iowa, Grundy center, Independence, and New Hampton respectively.</p>
-<p><strong>State of Iowa</strong></p>
-<p><img src="../../images/Iowa_community_summary.png" class="img-fluid" width="703"></p>
-<p><strong>Grundy Center</strong></p>
-<p><img src="../../images/grundy_center_community_summary (1).png" class="img-fluid" width="703"></p>
-<p><strong>Independence</strong></p>
-<p><img src="../../images/independence_community_summary.png" class="img-fluid" width="703"></p>
-<p><strong>New Hampton</strong></p>
-<p><img src="../../images/new_hampton_community_summary.png" class="img-fluid" width="703"></p>
-<p>To make a community summary infographic you can check <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
-<p>More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;</p>
-<ul>
-<li>Local spending pattern</li>
-<li>Median age of residents</li>
-<li>Population between 500 and 10,000</li>
-<li>Stable, shrinking or increasing population</li>
-<li>Presence of a school</li>
-<li>Communities with growing income base</li>
-</ul>
-<p>Using TidyVerse in R, the following graphs was created.</p>
+<p>We chose these demographic data to give a well-rounded analysis of the housing demographics in our chosen communities and add context to the housing conditions we gathered.</p>
+<p>Our data came from the <strong>United States Decennial Census</strong> and the <strong>American Community Survey (ACS)</strong>. The U.S. census is one of the best places to gather demographic data because it counts every resident in the United States. It has a very low inaccuracy, but the U.S. census is only conducted every ten years. The American Community Survey (ACS) is your best bet for more recent data. The ACS has more detailed demographic data and is conducted every five years for the entirety of the United States and every year for places with a population over 65,000. The ACS does not count every individual resident in the United States and instead relies on surveying a proportion of the population to create estimates of the demographics. Thus, it can be inaccurate and provides a margin of error. It is best used for data on the changing population, housing, and workforce.</p>
+<p>To collect data in R Studio, we installed the&nbsp;<em>Tidyverse</em>&nbsp;and&nbsp;<em>Tidycensus</em>&nbsp;packages and loaded them with the <code>library()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidycensus"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidycensus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <em>Tidyverse</em> package includes a range of functions that make coding in R Studio more user-friendly. It is not necessary for data collection, but it certainly does help. In contrast, the <em>Tidycensus</em> package is essential to data collection. The <em>Tidycensus</em> package lets you pull data directly from the Decennial Census and the ACS using the <code>get_decennial()</code> and <code>get_acs()</code> functions. You only need to specify three arguments to pull data: geography, year, and variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_decennial</span>(<span class="at">geography =</span> <span class="st">"state"</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">variable =</span> <span class="st">"P001001"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">year =</span> <span class="dv">2010</span>)  </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">get_acs</span>(<span class="at">geography =</span> <span class="st">"region"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">variable =</span> <span class="st">"B19013_001"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> <span class="dv">2010</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To visualize data in R Studio, we installed and loaded more packages: <em>ggplot2, scales,</em> and <em>ggthemes.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>) </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"scales"</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>The ggplot2</em> package is required to create a plot in R Studio. With <em>ggplot2</em> you get access to the function <code>ggplot(),</code> which allows you to create visualizations. <code>ggplot()</code> takes the arguments <code>data</code> and <code>mapping</code> to create a plot. <code>Mapping</code> refers to the x and y coordinates of our data. There are various geoms included in the <em>ggplot2</em> package that aid in creating a visualization. Here are some examples:</p>
+<table class="table">
+<caption>Using the packages above, the following plots were made in R Studio:</caption>
+<thead>
+<tr class="header">
+<th>Geom</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>geom_line()</td>
+<td>line graph</td>
+</tr>
+<tr class="even">
+<td>geom_point()</td>
+<td>scatter plot</td>
+</tr>
+<tr class="odd">
+<td>geom_histogram()</td>
+<td>histogram</td>
+</tr>
+<tr class="even">
+<td>geom_bar()</td>
+<td>bar chart</td>
+</tr>
+<tr class="odd">
+<td>geom_col()</td>
+<td>column chart</td>
+</tr>
+</tbody>
+</table>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/all_population.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="../../images/demographics/all_percent_change.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/change_pop_cities.png" class="img-fluid" width="498"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="../../images/demographics/pop_projection_cities.png" class="img-fluid" width="498"></p>
@@ -560,24 +616,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="../../images/demographics/home_ownership.png" class="img-fluid" width="498"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/med_house.png" class="img-fluid" width="498"></p>
-</div>
 </div>
 </div>
 <p><img src="../../images/demographics/median_income.png" class="img-fluid"></p>
 <p><img src="../../images/demographics/median_value.png" class="img-fluid"></p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/vacancy_rate.png" class="img-fluid" width="498"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="../../images/demographics/vacant_reason.png" class="img-fluid" width="498"></p>
-</div>
-</div>
-</div>
 <p><img src="../../images/demographics/value_and_year_built.png" class="img-fluid" width="522"></p>
+<p>Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations</p>
+<p><strong>Grundy Center</strong></p>
+<p><img src="../../images/grundy_center_community_summary (1).png" class="img-fluid" width="703"></p>
+<p><strong>Independence</strong></p>
+<p><img src="../../images/independence_community_summary.png" class="img-fluid" width="703"></p>
+<p><strong>New Hampton</strong></p>
+<p><img src="../../images/new_hampton_community_summary.png" class="img-fluid" width="703"></p>
+<p>To make a community summary infographic you can check <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
+<ol start="3" type="1">
+<li><p>Key findings and insights.&nbsp;</p></li>
+<li><p>Interpretation of demographic patterns and their implications.&nbsp;</p></li>
+</ol>
+</section>
+<section id="collecting-data-to-identify-study-communities" class="level3">
+<h3 class="anchored" data-anchor-id="collecting-data-to-identify-study-communities">Collecting Data to Identify Study Communities</h3>
+<p>To keep this project moving into other years, we decided to identify study communities in Iowa that could benefit from this project. All data collection was completed in R Studio using the Tidycensus and Tidyverse packages to pull data from the Decennial Census and American Community Survey (ACS).</p>
+<p>The following demographic data was collected:</p>
+<ul>
+<li><p><strong>Age</strong></p>
+<p>The age of a community’s population can be very telling of its growth. Communities that have a higher percentage of their population over the age of sixty-five than their population under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.</p></li>
+<li><p><strong>Population Size</strong></p>
+<p>Specifically, we were looking for communities with a population between 500 and 10,000. Communities with smaller populations are this project’s main focus. We were particularly interested in any communities that had a declining population as that can indicate it is struggling.</p></li>
+<li><p><strong>Housing</strong></p>
+<p>A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community, and the community is not growing.</p></li>
+<li><p><strong>Occupancy rates</strong></p>
+<p>Communities with low home ownership rates and high vacancy rates could have issues and be struggling. There is little room for community investment if residents cannot afford to buy their own homes.</p></li>
+<li><p><strong>Income</strong></p>
+<p>A low median income or a low percent change in income can indicate a struggling community. There is little room for community investment when residents have little income.</p></li>
+<li><p><strong>Jobs and employment</strong></p>
+<p>Employment statistics are important because there will only be money to invest in a community if people are employed. The percentage of the workforce that commuted to work gives information on where jobs are located. If people are commuting, there are not enough jobs in town. People also tend to move to where jobs are.</p></li>
+</ul>
+<p>We were able to start the visualization process in Tableau for the population data. From this visualization we can pin point the communities in Iowa that have a concerning growth rate and population size.</p>
+<p>[insert viz]</p>
+</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>

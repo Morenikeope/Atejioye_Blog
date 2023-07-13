@@ -327,11 +327,27 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 ![](/images/confidencelevelnew.png)
 
-## Geographic Visualizations
+## Geographic Visualization
 
-Mapping our output using GIS allows us to visualize and understand clusters for AI-model output for vegetation, siding, gutters, and roof. This will allow us visualize clusters or locations of houses in good conditions versus poor condition.
+### What is GIS and how is it used in this project?
 
-To visualize addresses for the communities, first we needed to geocode (latitude and longitude) each address. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
+A Geographic Information System (GIS) is a spatial system that is used to analyze, display and store geographically referenced information. GIS uses data that is attached to a unique location and can be useful for identifying problems and trends.
+
+More information [here](https://www.esri.com/en-us/what-is-gis/overview).
+
+Mapping our house quality output using GIS enables us to visualize the AI-model output for vegetation, siding, gutters, and roof characteristics. This will allow us to visualize locations of houses in good conditions versus poor condition.
+
+In the future, it could be beneficial to utilize statistical analysis techniques to understand the spatial relationship between data and visualize clusters.
+
+#### Geocoding Addresses
+
+To visualize addresses for the communities, first we needed to geocode (provide latitude and longitude for each address). There are many types of software that can be used to geocode addresses.
+
+QGIS is an open-source GIS software. We first geocoded addresses by using the QGIS Plugin called MMQGIS. When using this method, the plugin would crash and fail to geocode all the addresses. Because of this, we geocoded addresses using R instead. Base code was from [storybench](https://www.storybench.org/geocode-csv-addresses-r/){target="_blank"}.
+
+Below is an image of a CSV file with addresses latitude and longitude.
+
+![](/images/ogden_geocoded_addresses.png)
 
 More information [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/Week6TeamBlog/Week6TeamBlog.html#mapping){target="_blank"}.
 
@@ -351,19 +367,91 @@ Click [here](https://1angelinaevans.github.io/AngelinaEvansBlog/posts/MappingHou
 
 Identifying housing issues in a rural community requires more than just describing the physical and locational characteristics of its housing stock. A more complete understanding of local housing issues also requires consideration of the community's residents. After consulting with our clients, we selected a set of demographic and economic measures to characterize the local population in our study communities. These indicators allow communties to put their local housing conditions within a broader context of peer cities.
 
-The following characteristics were used for the demographic profile of the communities.
+### Profiling Using R Studio
 
--   Home ownership rate
--   Population change
--   Median household income
--   Age of houses
--   Median house values
+We constructed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are but are not limited to, data on **age**, **race**, **ethnicity**, **gender**, **marital status**, **income**, **education**, and **employment**.
 
-Using the infographics feature on ArcGIS Pro, we created community summary of the state of Iowa, Grundy center, Independence, and New Hampton respectively.
+The following demographic data were used for the demographic profile of the communities:
 
-**State of Iowa**
+-   Population.
 
-![](/images/Iowa_community_summary.png){width="703"}
+-   Median income
+
+-   Median home value
+
+-   Median year home built
+
+-   Home ownership rates
+
+We chose these demographic data to give a well-rounded analysis of the housing demographics in our chosen communities and add context to the housing conditions we gathered.
+
+Our data came from the **United States Decennial Census** and the **American Community Survey (ACS)**. The U.S. census is one of the best places to gather demographic data because it counts every resident in the United States. It has a very low inaccuracy, but the U.S. census is only conducted every ten years. The American Community Survey (ACS) is your best bet for more recent data. The ACS has more detailed demographic data and is conducted every five years for the entirety of the United States and every year for places with a population over 65,000. The ACS does not count every individual resident in the United States and instead relies on surveying a proportion of the population to create estimates of the demographics. Thus, it can be inaccurate and provides a margin of error. It is best used for data on the changing population, housing, and workforce.
+
+To collect data in R Studio, we installed the *Tidyverse* and *Tidycensus* packages and loaded them with the `library()` function.
+
+```{r, eval = FALSE}
+install.packages("tidyverse") 
+install.packages("tidycensus")
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse) 
+library(tidycensus)
+```
+
+The *Tidyverse* package includes a range of functions that make coding in R Studio more user-friendly. It is not necessary for data collection, but it certainly does help. In contrast, the *Tidycensus* package is essential to data collection. The *Tidycensus* package lets you pull data directly from the Decennial Census and the ACS using the `get_decennial()` and `get_acs()` functions. You only need to specify three arguments to pull data: geography, year, and variable.
+
+```{r, eval = FALSE}
+get_decennial(geography = "state",
+              variable = "P001001",
+              year = 2010)  
+
+get_acs(geography = "region",
+        variable = "B19013_001",
+        year = 2010)
+```
+
+To visualize data in R Studio, we installed and loaded more packages: *ggplot2, scales,* and *ggthemes.*
+
+```{r, eval = FALSE}
+install.packages("ggplot2") 
+install.packages("scales") 
+install.packages("ggthemes")
+```
+
+```{r, message = FALSE}
+library(ggplot2) 
+library(scales) 
+library(ggthemes)
+```
+
+*The ggplot2* package is required to create a plot in R Studio. With *ggplot2* you get access to the function `ggplot(),` which allows you to create visualizations. `ggplot()` takes the arguments `data` and `mapping` to create a plot. `Mapping` refers to the x and y coordinates of our data. There are various geoms included in the *ggplot2* package that aid in creating a visualization. Here are some examples:
+
+| Geom             | Result       |
+|------------------|--------------|
+| geom_line()      | line graph   |
+| geom_point()     | scatter plot |
+| geom_histogram() | histogram    |
+| geom_bar()       | bar chart    |
+| geom_col()       | column chart |
+
+: Using the packages above, the following plots were made in R Studio:
+
+::: {layout-ncol="2"}
+![](/images/demographics/all_percent_change.png){width="498"}
+
+![](/images/demographics/pop_projection_cities.png){width="498"}
+
+![](/images/demographics/home_ownership.png){width="498"}
+:::
+
+![](/images/demographics/median_income.png)
+
+![](/images/demographics/median_value.png)
+
+![](/images/demographics/value_and_year_built.png){width="522"}
+
+Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations
 
 **Grundy Center**
 
@@ -379,42 +467,43 @@ Using the infographics feature on ArcGIS Pro, we created community summary of th
 
 To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday){target="_blank"} for a guide.
 
-More demographic analysis was done to determine which communities in Iowa could benefit from the project. We used the following indicators;
+3.  Key findings and insights. 
 
--   Local spending pattern
--   Median age of residents
--   Population between 500 and 10,000
--   Stable, shrinking or increasing population
--   Presence of a school
--   Communities with growing income base
+4.  Interpretation of demographic patterns and their implications. 
 
-Using TidyVerse in R, the following graphs was created.
+### Collecting Data to Identify Study Communities
 
-::: {layout-ncol="2"}
-![](/images/demographics/all_population.png){width="498"}
+To keep this project moving into other years, we decided to identify study communities in Iowa that could benefit from this project. All data collection was completed in R Studio using the Tidycensus and Tidyverse packages to pull data from the Decennial Census and American Community Survey (ACS).
 
-![](/images/demographics/all_percent_change.png){width="498"}
+The following demographic data was collected:
 
-![](/images/demographics/change_pop_cities.png){width="498"}
+-   **Age**
 
-![](/images/demographics/pop_projection_cities.png){width="498"}
+    The age of a community's population can be very telling of its growth. Communities that have a higher percentage of their population over the age of sixty-five than their population under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.
 
-![](/images/demographics/home_ownership.png){width="498"}
+-   **Population Size**
 
-![](/images/demographics/med_house.png){width="498"}
-:::
+    Specifically, we were looking for communities with a population between 500 and 10,000. Communities with smaller populations are this project's main focus. We were particularly interested in any communities that had a declining population as that can indicate it is struggling.
 
-![](/images/demographics/median_income.png)
+-   **Housing**
 
-![](/images/demographics/median_value.png)
+    A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community, and the community is not growing.
 
-::: {layout-ncol="2"}
-![](/images/demographics/vacancy_rate.png){width="498"}
+-   **Occupancy rates**
 
-![](/images/demographics/vacant_reason.png){width="498"}
-:::
+    Communities with low home ownership rates and high vacancy rates could have issues and be struggling. There is little room for community investment if residents cannot afford to buy their own homes.
 
-![](/images/demographics/value_and_year_built.png){width="522"}
+-   **Income**
+
+    A low median income or a low percent change in income can indicate a struggling community. There is little room for community investment when residents have little income.
+
+-   **Jobs and employment**
+
+    Employment statistics are important because there will only be money to invest in a community if people are employed. The percentage of the workforce that commuted to work gives information on where jobs are located. If people are commuting, there are not enough jobs in town. People also tend to move to where jobs are.
+
+We were able to start the visualization process in Tableau for the population data. From this visualization we can pin point the communities in Iowa that have a concerning growth rate and population size.
+
+\[insert viz\]
 
 ## Conclusion
 
