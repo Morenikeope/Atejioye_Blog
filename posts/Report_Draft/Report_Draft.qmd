@@ -32,15 +32,15 @@ The goal of this project is to investigate methods for conducting a thorough and
 
 -   Conduct a literature review to examine examples of AI applications in planning and housing.
 
--   Identify study communities within the population range of 500 to 10,000, focusing on stable or increasing population, the presence of a school, and median age of residents.
+-   identify study communities and collect data about the communities.
 
--   Collect housing data, including images, from existing sources such as Google street view and county assessor websites.
+-   Collect housing data, including images, from existing sources such as realtor websites, Google Street View and county assessor websites.
 
 -   Collect data on housing age, number of bedrooms, square footage, and assessed value.
 
--   Utilize roofing and gutter detection as part of AI analysis to identify homes that may qualify for community assistance programs addressing water damage issues.
+-   Utilize roof, gutter, siding, and landscape condition as part of AI analysis to identify homes that may qualify for community assistance programs.
 
--   Assess the results and refine selection criteria for Year 2 of the project, considering the insights gained and community input received.
+-   Assess the results and recommend next steps for Year 2 of the project, considering the insights gained and community input received.
 
 ## **Literature Review**
 
@@ -192,31 +192,33 @@ To ensure convenient access to the images collected from various sources, we dev
 
 -   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
 
-    \# Ogden
+    ```         
+    # Ogden
 
-    og_data \<- read.csv("\~/GitHub/Housing/complete links/ogden_urls.csv")
+    og_data <- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
 
-    urls_start \<- og_data\[, 1\]
+    urls_start <- og_data[, 1]
 
-    urls_full \<- paste(urls_start, "&key=", sep = "")
+    urls_full <- paste(urls_start, "&key=", sep = "")
 
-    urls_full_api_key \<- paste(urls_full, api_key, sep = "")
+    urls_full_api_key <- paste(urls_full, api_key, sep = "")
 
-    \# creates folder and downloads all images
+    # creates folder and downloads all images
 
     dir.create("ogden_google_images_folder")
 
     for(i in seq_along(urls_full_api_key)) {
 
-    \_\_\_ file_path \<- file.path("ogden_google_images_folder", paste0("G_OG\_", og_data\[i,6\], "\_.png"))
+    ___ file_path <- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
 
-    \_\_\_ download.file(urls_full_api_key\[i\], file_path, mode = "wb")
+    ___ download.file(urls_full_api_key[i], file_path, mode = "wb")
 
-    \_\_\_ print(file_path)
+    ___ print(file_path)
 
-    \_\_\_ print(i)
+    ___ print(i)
 
     }
+    ```
 
 ## AI Models
 
@@ -352,7 +354,7 @@ Furthermore, the project employed AI analysis, particularly siding, vegetation a
 -   **Image Classification for Model Training**
 
     |                                                    |                                          |
-    |----------------------------------------------------|------------------------------------------|
+    |------------------------------------|------------------------------------|
     | **If Image Classification is ...**                 | **then we recommend ...**                |
     | Time consuming                                     | Teamwork                                 |
     | Subjective                                         | Obtain two ratings per photo             |
