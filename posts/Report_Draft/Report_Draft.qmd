@@ -94,17 +94,17 @@ The image below depicts our project plan, outlining the strategies and actions w
 
 ## Data Collection
 
-At first, we gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. However, we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
+We first gathered house images manually from Kaggle, amassing a total of approximately 35,000 images. Kaggle is a website for hosting and sharing datasets. This website has many useful datasets for building AI models, which is why we decided to use images from Kaggle to aid in the initial AI model building process.
 
-Based on the WINVEST project, the team decided to work with the communities of Grundy Center, New Hampton and Independence.
+However, since we needed more relevant images specific to Iowa, we decided to web scrape from other sources. Through this technique, we automated the process of acquiring images. Despite this improvement, we still had to manually sift through the gathered images, distinguishing those of high quality and suitable features for training our model from those of poorer quality.
 
-### Web Scraping
+Based on the WINVEST project, the team decided to web scrape housing images and data from the communities of Grundy Center, New Hampton and Independence.
 
-Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching. The image below is an example of web scraping on the Zillow website.
+### What is Web Scraping?
 
-![](/images/zillow.png)
+Web scraping is like a digital tool that automatically collects information from websites, allowing us to gather data quickly without manual searching.
 
-The plan was to collect house images from the following websites;
+Before starting any web scraping, our team had a plan to scrape the following websites for image, address, and attribute data:
 
 -   [**Zillow**](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169%7C65545421228%7Caud-352785741564:kwd-570802407%7C603457706088%7C&semQue=null&gclid=EAIaIQobChMI-Nv7oPL3_wIVWSazAB0eyA9CEAAYASAAEgKaafD_BwE){target="_blank"}
 
@@ -114,7 +114,7 @@ The plan was to collect house images from the following websites;
 
     Trulia is another online platform and app for real estate that helps users find homes, apartments, and other property listings, and provides information on neighborhoods and market trends.
 
--   [**realtor.com**](https://www.realtor.com/){target="_blank"}
+-   [**Realtor.com**](https://www.realtor.com/){target="_blank"}
 
     Realtor.com is a website and app that offers a comprehensive database of property listings, allowing users to search for homes, apartments, and other real estate options. It also provides resources for finding real estate agents.
 
@@ -124,7 +124,7 @@ The plan was to collect house images from the following websites;
 
 -   [**Vanguard Appraisals, Inc**](https://www.iowaassessors.com/){target="_blank"}
 
-    Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.
+    Vanguard Appraisals, Inc is a company that specializes in providing property appraisal services and software solutions for assessment in cities, counties and township Assessment Offices.-
 
 -   [**Beacon**](https://beacon.schneidercorp.com/){target="_blank"} **by Schneider Geospatial**
 
@@ -134,89 +134,55 @@ The plan was to collect house images from the following websites;
 
     To scrape images from Google Street View using the Google API, you can utilize the Google Street View Image API. You would need desired coordinates or addresses to retrieve the Street View images, and then save the images obtained from the API response to your local storage or database for further use.
 
-The Beacon website implemented restrictions that prohibits web scraping activities on their platform. One major thing to also note is Zillow owns Trulia.
+Upon further reflection, we realized that Zillow owns Trulia. The major difference in the two sites is the Zestimate provided on Zillow. Because we were interested in the housing value, we chose to scrape Zillow out of the two.
 
-We resolved to web scraping from the following websites;
+The following are the sites we did scrape:
 
 -   Zillow
--   Google Street View
+-   Polk County Assessor Website
 -   Vanguard
 -   Beacon
--   Polk County Assessor Website
+-   Google Street View
 
-Based on the WINVEST project, we collected house images of Independence, New Hampton, and Grundy Center. However, during the process of web scraping to gather images, we encountered the following problems;
+### Address Collection
 
--   Blurred houses. Further investigation revealed that certain homeowners request Google to have their residences intentionally blurred on Google Street View. Such houses were ignored.
+Vanguard has a GIS tool available that allowed us to select portions of cities and download addresses and parcel numbers. Only data for Independence was available through Vanguard. A downside to this method was that Vanguard limits the number of parcels we can select for download at a time.
 
--   "Address" inconsistencies in Independence. Some houses had multiple house numbers listed, such as 100/101, while others had addresses like 100 1/2.
+Beacon has more protection against web scraping than Vanguard. However, web scraping is necessary for the automation of downloading data on this website, as the GIS tool is not available. To scrape addresses and parcel numbers, and other house information for the remaining cities, we used the [Instant Data Scraper Tool](https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah). This scraper provided us with CSV files of scraped data from Beacon.
 
--   Duplicate images with different addresses.
+Once the data had been scraped, we found that the CSV files provided us with a format that was not ideal.
 
--   Particular streets are not mapped.
+Examples of issues we encountered with the CSV files:
 
--   Images of inside of stores showing as a house image.
+-   Many of the cells contained hidden characters.
 
-::: {layout-ncol="2"}
-![](/images/MicrosoftTeams-image%20(1).png){width="436"}
+-   New lines within the cells.
 
-![](/images/no_image.png){width="436"}
-:::
+To fix this file format, we used Excel's Text-to-Columns tool to organize text, and Excel functions to separate and combine sections, and the Excel Find and Replace tool to remove unwanted characters.
 
-### **Address Collection**
+In addition to re-formatting data, it was also necessary to create links for the Google Street View image collection process. Below is an example of a link to a Google Street View Image (excluding Google API key). To create links, Excel functions were used to concatenate the beginning part of the links (https://maps.googleapis.com/maps/api/streetview?size=800x800&location=), the address (303+I+AVE,+GRUNDY+CENTER+IOWA) and Google API key.
 
--   Brief explanation of Beacon and Vanguard as data sources.
+**https://maps.googleapis.com/maps/api/streetview?size=800x800&location=303+I+AVE,+GRUNDY+CENTER+IOWA**
 
--   Scraping process for Beacon.
+These addresses were the main source for creating Google API links, our main source for images. If the addresses are incorrect, we wouldn't be able to pull the images.
 
--   Scraping process for Vanguard.
-
--   Data Cleaning and Challenges encountered.
-
--   Importance of obtaining accurate and reliable data from these sources.
-
--   Link to more information [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}.
-
-![](/images/6beacon_select.png)
+Link to more information [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#address-collection-and-cleaning){target="_blank"}.
 
 ### Image Collection
 
--   Scrape Google Images - [Google Image Scraping](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"}
+Out of our five scraping sites, we got images from Zillow and Google Street View. Both sites presented challenges in gathering images. Because of the challenges, we decided to use WINVEST photos as well. In total, the image data came from four sites:
 
-```{R, eval=FALSE}
-# Ogden
+-   Zillow
 
-og_data <- read.csv("~/GitHub/Housing/complete links/ogden_urls.csv")
+-   Google Street View
 
-urls_start <- og_data[, 1]
+-   WINVEST
 
-urls_full <- paste(urls_start, "&key=", sep = "")
+-   Vanguard
 
-urls_full_api_key <- paste(urls_full, api_key, sep = "")
+#### Naming Convention
 
-# creates folder and downloads all images
-
-dir.create("ogden_google_images_folder")
-
-for(i in seq_along(urls_full_api_key)) {
-
-___ file_path <- file.path("ogden_google_images_folder", paste0("G_OG_", og_data[i,6], "_.png"))
-
-___ download.file(urls_full_api_key[i], file_path, mode = "wb")
-
-___ print(file_path)
-
-___ print(i)
-
-}
-```
-
--   Creating Google API Links - [Google API](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links){target="_blank"}
-
-![](/images/10use_link.png)
-
--   Naming Convention
-
-To ensure convenient access to the images collected from various sources, we devised a standardized naming convention: Source_City_Address\_
+Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is **source_city_address**. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter "D"and "H," respectively.
 
 | Source       | City              |
 |--------------|-------------------|
@@ -226,13 +192,112 @@ To ensure convenient access to the images collected from various sources, we dev
 | B - Beacon   | S - Slater        |
 | W - WINVEST  |                   |
 
-For example,
+Here is an example of the naming convention in use:
 
--   Zillow
--   New Hampton, Iowa
--   311 W Main St
+> Source: Zillow
+>
+> City: New Hampton, Iowa
+>
+> Address: 311 W Main St
+>
+> **Result**: Z_H_311 W MAIN ST\_
 
-**Result**: Z_H_311 W MAIN ST\_
+#### Web Scraping Zillow
+
+We scraped and downloaded image URLs for For Sale houses and recently Sold houses on Zillow. In total, we could scrape about one hundred images from Zillow. There were many more images available on Zillow that we couldn't scrape.
+
+**Challenges and Limitations of Scraping Zillow**
+
+-   Good images are only available for For Sale and recently Sold houses. Other house images on Zillow are taken from Google.
+
+-   Images are stored in a carousel. The only image we could scrape was the first, which wasn't always an image of the exterior.
+
+-   Lazy loading. The term lazy loading refers to how a webpage loads its data. Because Zillow is lazy, it only loads the image data when the user scrolls down the page. When web scraping, only the loaded images are available. A more complicated process is needed to scrape a lazily loaded webpage.
+
+Zillow is a great source for image data if you can get around the lazy loading issue and grab all images from the carousel. Zillow images for For Sale homes are more recent than other sources.
+
+#### Scraping Google Street View
+
+A Google API key is required to scrape images from Google Street View. It is included in the image URL to allow viewing of a specific house.
+
+As discussed earlier, the address data scraped from Vanguard and Beacon was cleaned and stored in CSV files to create the image URLs for use with Google Street View. We wrote code to open each image URL in the CSV file and download the image.
+
+Here is an example of the code to download the image from Google Street View.
+
+```{python, eval = FALSE}
+
+data <- read.csv("file_path")
+
+urls_start <- data[, 1]
+
+urls_full <- paste(urls_start, “&key=”, sep = ““)
+
+urls_full_api_key <- paste(urls_full, api_key, sep = ““)
+
+# creates folder and downloads all images
+
+dir.create(“google_images_folder_name”)
+
+for(i in seq_along(urls_full_api_key)) {
+
+___ file_path <- file.path(“google_images_folder_name”, paste0(“image_name”, data[i,6], “_.png”))
+
+___ download.file(urls_full_api_key[i], file_path, mode = “wb”)
+
+___ print(file_path)
+
+___ print(i)
+
+}
+```
+
+Click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#creating-google-api-links){target="_blank"} for more information.
+
+**Challenges of Scraping Google Street View**
+
+During the process of gathering images from Google Street View, we encountered the following problems:
+
+-   Image downloading takes time. It takes upwards of an hour for a city of 2,000.
+
+-   Blurred houses. Certain homeowners request Google to intentionally blur their residences on Google Street View to protect their privacy. Such images were ignored.
+
+-   Address inconsistencies in Independence that caused errors when scraping. Some houses listed multiple house numbers, such as 100/101, while others had addresses like 100 1/2.
+
+-   Duplicate images for different addresses.
+
+-   Particular streets were not mapped, particularly in New Hampton, resulting in no image available.
+
+-   Images of inside of stores showing as an exterior house image.
+
+::: {layout-ncol="2"}
+![](/images/MicrosoftTeams-image%20(1).png){width="436"}
+
+![](/images/no_image.png){width="436"}
+:::
+
+Click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_guide_w7/full_guide.html#scrape-google-images){target="_blank"} for more information on collecting images from Google Street View.
+
+### Attribute Collection
+
+#### Using a Spider to Collect Vanguard Information
+
+A spider is an automated version of web scraping that automatically goes page by page on a website. A spider reduces manual involvement in the scraping process and makes it more efficient.
+
+Aaron Case, our friend on the AI Grocery Team, built us a spider to scrape Vanguard data. We were able to grab the following information from Vanguard:
+
+-   Parcel number
+
+-   Image URL
+
+-   House style
+
+-   Year built
+
+-   Square footage
+
+-   Appraised value
+
+Click [here](https://cyberspeedac.github.io/Aaron-Case-DSPG-Blog/posts/Aaron_C_MultiWeek/Aaron_C_Spiders.html){target="_blank"} for more information on how Spider works.
 
 ## AI Models
 
@@ -408,7 +473,9 @@ More objectives to be considered for Year 2 of this project;
 -   Create an application that can be used by cities.
 -   Leveraging spatial analysis tools, we can gain valuable insights and broaden the analytical capabilities specifically in relation to identifying communities that might benefit.
 -   Look more into how to use Geospatial Artificial Intelligence (GeoAI).
--   Create a sidewalk AI model.
+-   Create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood.
+
+![](/images/drone_to_GIS.png)
 
 ## Data source
 
