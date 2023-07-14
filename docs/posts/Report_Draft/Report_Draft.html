@@ -213,7 +213,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#collecting-data-to-identify-study-communities" id="toc-collecting-data-to-identify-study-communities" class="nav-link" data-scroll-target="#collecting-data-to-identify-study-communities">Collecting Data to Identify Study Communities</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#future-research-questions" id="toc-future-research-questions" class="nav-link" data-scroll-target="#future-research-questions">Future Research Questions</a></li>
+  <li><a href="#future-research-questions" id="toc-future-research-questions" class="nav-link" data-scroll-target="#future-research-questions">Future Research Questions</a>
+  <ul class="collapse">
+  <li><a href="#future-work-that-chris-needs-to-complete" id="toc-future-work-that-chris-needs-to-complete" class="nav-link" data-scroll-target="#future-work-that-chris-needs-to-complete"><strong>Future work that Chris needs to complete:</strong></a></li>
+  </ul></li>
   <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data source</a></li>
   </ul></li>
@@ -334,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vanguard and Beacon are companies used by most cities in Iowa. They hold much of the state’s housing data. This is why the data collection from these websites were of importance.</p>
 <p>Vanguard has a GIS tool available that allowed us to select portions of cities and download addresses and parcel numbers. Only data for Independence was available through Vanguard. Vanguard limits the number of parcels we can select at a time for download.</p>
 <p>Beacon has more protection against web scraping than Vanguard. Also, the GIS tool was not available for Beacon data. The process of downloading data one house at a time would be extremely time consuming. For example, Grundy Center, a city of around 2,000 people, has approximately 1,200 addresses. Collecting data for 1,200 addresses without automation would take a very long time.</p>
-<p>To scrape addresses and parcel numbers, we used the <a href="https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah">Instant Data Scraper Tool</a>. This scraper provided us with CSV files of house data.</p>
+<p>To scrape addresses and parcel numbers, we used the <a href="https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah" target="_blank">Instant Data Scraper Tool</a>. This scraper provided us with CSV files of house data.</p>
 <p>Once the data had been scraped, we found that the CSV files provided us with a format that was not ideal.</p>
 <p>Examples of issues we encountered with the CSV files:</p>
 <ul>
@@ -356,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Vanguard</p></li>
 </ul>
 <p><strong>Naming Convention</strong></p>
-<p>Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is <strong>source_city_address</strong>. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter “D”and “H,” respectively.</p>
+<p>Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is <strong>source_city_address_</strong>. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter “D”and “H,” respectively.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -501,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-is-gis-and-how-is-it-used-in-this-project" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-gis-and-how-is-it-used-in-this-project">What is GIS and how is it used in this project?</h3>
 <p>A Geographic Information System (GIS) is a spatial system that is used to analyze, display and store geographically referenced information. GIS uses data that is attached to a unique location and can be useful for identifying problems and trends.</p>
-<p>More information <a href="https://www.esri.com/en-us/what-is-gis/overview">here</a>.</p>
+<p>More information <a href="https://www.esri.com/en-us/what-is-gis/overview" target="_blank">here</a>.</p>
 <p>Mapping our house quality output using GIS enables us to visualize the AI-model output for vegetation, siding, gutters, and roof characteristics. This will allow us to visualize locations of houses in good conditions versus poor condition.</p>
 <p>In the future, it could be beneficial to utilize statistical analysis techniques to understand the spatial relationship between data and visualize clusters.</p>
 </section>
@@ -511,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>QGIS is an open-source GIS software. We first geocoded addresses by using the QGIS Plugin called MMQGIS. When using this method, the plugin would crash and fail to geocode all the addresses. Because of this, we geocoded addresses using R instead. Base code was from <a href="https://www.storybench.org/geocode-csv-addresses-r/" target="_blank">storybench</a>.</p>
 <p>Below is an image of a CSV file with addresses latitude and longitude.</p>
 <p><img src="../../images/ogden_geocoded_addresses.png" class="img-fluid"></p>
-<p>More information <a href="https://www.esri.com/en-us/what-is-gis/overview">here</a>.</p>
+<p>More information <a href="https://www.esri.com/en-us/what-is-gis/overview" target="_blank">here</a>.</p>
 </section>
 <section id="mapping-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="mapping-the-data">Mapping the Data</h3>
@@ -534,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Identifying housing issues in a rural community requires more than just describing the physical and locational characteristics of its housing stock. A more complete understanding of local housing issues also requires consideration of the community’s residents. After consulting with our clients, we selected a set of demographic and economic measures to characterize the local population in our study communities. These indicators allow communties to put their local housing conditions within a broader context of peer cities.</p>
 <section id="profiling-using-r-studio" class="level3">
 <h3 class="anchored" data-anchor-id="profiling-using-r-studio">Profiling Using R Studio</h3>
-<p>We constructed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are but are not limited to, data on <strong>age</strong>, <strong>race</strong>, <strong>ethnicity</strong>, <strong>gender</strong>, <strong>marital status</strong>, <strong>income</strong>, <strong>education</strong>, and <strong>employment</strong>.</p>
+<p>We developed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are data on <strong>age</strong>, <strong>race</strong>, <strong>ethnicity</strong>, <strong>gender</strong>, <strong>marital status</strong>, <strong>income</strong>, <strong>education</strong>, and <strong>employment</strong>.</p>
 <p>The following demographic data were used for the demographic profile of the communities:</p>
 <ul>
 <li><p>Population.</p></li>
@@ -606,25 +609,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Using the packages above, the following plots were made in R Studio:</p>
-<p><img src="../../images/demographics/all_percent_change.png" class="img-fluid" width="571"></p>
-<p><img src="../../images/demographics/pop_projection_cities.png" class="img-fluid" width="571"></p>
+<p>Using the packages above, the following plots were made in R Studio. For an example of how the demographic profile can be used, let’s analyze Grundy Center. Mentioned above, Grundy Center has the lowest housing conditions of our three cities.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/all_percent_change.png" class="img-fluid" width="596"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../../images/demographics/pop_projection_cities.png" class="img-fluid" width="596"></p>
+</div>
+</div>
+</div>
+<p>Grundy Center has a percent population change of 7.70%, which is right alongside the percent population change of the state of Iowa and the Midwest. Interestingly, New Hampton has a negative percent change, and Independence has a fairly stable population change. The growth rate of Grundy Center is not reflected in its housing quality.</p>
+<p>The population projection plot shows Grundy Center is the smallest of our three communities. Its size may explain the housing quality issue. Smaller communities usually have a smaller tax base and less money to fund neighborhood improvements.</p>
 <p><img src="../../images/demographics/home_ownership.png" class="img-fluid" width="571"></p>
+<p>Grundy Center has a much higher home ownership rate than either New Hampton or Independence, which has been consistently higher for the past five years. Grundy Center’s home ownership rate has been higher than all three contextual areas – Iowa, the Midwest, and the United States- for our collected data. Home ownership rates are not reflected in housing quality.</p>
 <p><img src="../../images/demographics/median_income.png" class="img-fluid"></p>
+<p>Unlike New Hampton and Independence, Grundy Center’s median income is on par with its contextual areas. The median income surpassed the national median in 2019 and has stayed higher. Income is not a problem in Grundy Center.</p>
 <p><img src="../../images/demographics/median_value.png" class="img-fluid"></p>
+<p>Grundy Center’s median home value has wavered over the years. In 2009, Grundy Center had the lowest median home value of our communities. It has since risen to have the highest median home value. The median home value is significantly lower for all three communities than the contextual areas.</p>
 <p><img src="../../images/demographics/value_and_year_built.png" class="img-fluid" width="522"></p>
-<p>Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations</p>
+<p>The houses in our three communities are aged compared to the contextual areas. Iowa has a high percentage of older houses, and this shows in our communities. Grundy Center has the youngest houses and even has a house or two built in 2020 or later. All three cities are missing the increase of houses built from 2010 to 2019, but Grundy Center has the largest percentage of houses built in that time frame.</p>
+<p>Grundy Center is close to the Cedar Falls-Waterloo metropolitan area, which could explain the low housing quality and high growth rate, median income, and housing value. There may be demand for housing in the community, and residents may be traveling outside the city for work.</p>
+<p><strong>Other Visualizations</strong></p>
+<p>Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations are a way that communities can gather demographic data quickly and efficiently themselves. The community summary is a base template, but custom demographics can be used.</p>
 <p><strong>Grundy Center</strong></p>
 <p><img src="../../images/grundy_center_community_summary (1).png" class="img-fluid" width="703"></p>
 <p><strong>Independence</strong></p>
 <p><img src="../../images/independence_community_summary.png" class="img-fluid" width="703"></p>
 <p><strong>New Hampton</strong></p>
 <p><img src="../../images/new_hampton_community_summary.png" class="img-fluid" width="703"></p>
-<p>To make a community summary infographic you can check <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
-<ol start="3" type="1">
-<li><p>Key findings and insights.&nbsp;</p></li>
-<li><p>Interpretation of demographic patterns and their implications.&nbsp;</p></li>
-</ol>
+<p>To make a community summary infographic you can click <a href="https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday" target="_blank">here</a> for a guide.</p>
 </section>
 <section id="collecting-data-to-identify-study-communities" class="level3">
 <h3 class="anchored" data-anchor-id="collecting-data-to-identify-study-communities">Collecting Data to Identify Study Communities</h3>
@@ -632,20 +647,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The following demographic data was collected:</p>
 <ul>
 <li><p><strong>Age</strong></p>
-<p>The age of a community’s population can be very telling of its growth. Communities that have a higher percentage of their population over the age of sixty-five than their population under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.</p></li>
-<li><p><strong>Population Size</strong></p>
-<p>Specifically, we were looking for communities with a population between 500 and 10,000. Communities with smaller populations are this project’s main focus. We were particularly interested in any communities that had a declining population as that can indicate it is struggling.</p></li>
+<p>The age of a community’s population can tell its growth. Communities with a higher percentage of their population over the age of sixty-five than those under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.</p></li>
+<li><p><strong>Population size</strong></p>
+<p>Specifically, we were looking for communities between 500 and 10,000. Communities with smaller populations are this project’s main focus. We were particularly interested in any communities with a declining population, as that indicates it is struggling.</p></li>
 <li><p><strong>Housing</strong></p>
-<p>A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community, and the community is not growing.</p></li>
+<p>A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community and the community is not growing.</p></li>
 <li><p><strong>Occupancy rates</strong></p>
-<p>Communities with low home ownership rates and high vacancy rates could have issues and be struggling. There is little room for community investment if residents cannot afford to buy their own homes.</p></li>
+<p>Communities with low home ownership and high vacancy rates could have issues and need help. There is little room for community investment if residents cannot afford to buy their own homes.</p></li>
 <li><p><strong>Income</strong></p>
 <p>A low median income or a low percent change in income can indicate a struggling community. There is little room for community investment when residents have little income.</p></li>
 <li><p><strong>Jobs and employment</strong></p>
 <p>Employment statistics are important because there will only be money to invest in a community if people are employed. The percentage of the workforce that commuted to work gives information on where jobs are located. If people are commuting, there are not enough jobs in town. People also tend to move to where jobs are.</p></li>
 </ul>
-<p>We were able to start the visualization process in Tableau for the population data. From this visualization we can pin point the communities in Iowa that have a concerning growth rate and population size.</p>
-<p>[insert viz]</p>
+<p>We started the visualization process in Tableau for the population data. From this visualization, we can pinpoint Iowa communities with a concerning growth rate and population size.</p>
+<p><strong>insert viz</strong></p>
+<p>The plot above is filtered to only show communities in Iowa with a population between 500 and 10,000. The communities that fall below average for percent population change and population size are potential study communities for our project. Further analysis of the other demographic data is required because many communities fall into this category, but this is a good start.</p>
 </section>
 </section>
 <section id="conclusion" class="level2">
@@ -663,6 +679,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Could we create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood?</p></li>
 </ul>
 <p><img src="../../images/drone_to_GIS.png" class="img-fluid"></p>
+<section id="future-work-that-chris-needs-to-complete" class="level3">
+<h3 class="anchored" data-anchor-id="future-work-that-chris-needs-to-complete"><strong>Future work that Chris needs to complete:</strong></h3>
+<p><img src="../../images/chris_todo.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="recommendations" class="level2">
 <h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>

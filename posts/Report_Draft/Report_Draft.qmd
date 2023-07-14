@@ -152,7 +152,7 @@ Vanguard has a GIS tool available that allowed us to select portions of cities a
 
 Beacon has more protection against web scraping than Vanguard. Also, the GIS tool was not available for Beacon data. The process of downloading data one house at a time would be extremely time consuming. For example, Grundy Center, a city of around 2,000 people, has approximately 1,200 addresses. Collecting data for 1,200 addresses without automation would take a very long time.
 
-To scrape addresses and parcel numbers, we used the [Instant Data Scraper Tool](https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah). This scraper provided us with CSV files of house data.
+To scrape addresses and parcel numbers, we used the [Instant Data Scraper Tool](https://chrome.google.com/webstore/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah){target="_blank"}. This scraper provided us with CSV files of house data.
 
 Once the data had been scraped, we found that the CSV files provided us with a format that was not ideal.
 
@@ -184,7 +184,7 @@ Out of our five scraping sites, we got images from Zillow and Google Street View
 
 **Naming Convention**
 
-Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is **source_city_address**. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter "D"and "H," respectively.
+Before we collected images, we created a standardized naming convention to maintain efficient organization. The base of our naming convention is **source_city_address\_**. In general, the first letter of the source or city represents it. Independence and New Hampton were adjusted to use the letter "D"and "H," respectively.
 
 | Source       | City              |
 |--------------|-------------------|
@@ -333,7 +333,7 @@ Details of the first AI model can be found [here](https://gavinfishy.github.io/G
 
 A Geographic Information System (GIS) is a spatial system that is used to analyze, display and store geographically referenced information. GIS uses data that is attached to a unique location and can be useful for identifying problems and trends.
 
-More information [here](https://www.esri.com/en-us/what-is-gis/overview).
+More information [here](https://www.esri.com/en-us/what-is-gis/overview){target="_blank"}.
 
 Mapping our house quality output using GIS enables us to visualize the AI-model output for vegetation, siding, gutters, and roof characteristics. This will allow us to visualize locations of houses in good conditions versus poor condition.
 
@@ -349,7 +349,7 @@ Below is an image of a CSV file with addresses latitude and longitude.
 
 ![](/images/ogden_geocoded_addresses.png)
 
-More information [here](https://www.esri.com/en-us/what-is-gis/overview).
+More information [here](https://www.esri.com/en-us/what-is-gis/overview){target="_blank"}.
 
 ### Mapping the Data
 
@@ -375,7 +375,7 @@ Identifying housing issues in a rural community requires more than just describi
 
 ### Profiling Using R Studio
 
-We constructed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are but are not limited to, data on **age**, **race**, **ethnicity**, **gender**, **marital status**, **income**, **education**, and **employment**.
+We developed a demographic profile of the three WINVEST cities - Grundy Center, Independence, and New Hampton - using R Studio. A demographic profile is a type of demographic analysis that focuses on a specific area. They are built using demographic data. Demographic data are data on **age**, **race**, **ethnicity**, **gender**, **marital status**, **income**, **education**, and **employment**.
 
 The following demographic data were used for the demographic profile of the communities:
 
@@ -441,21 +441,39 @@ library(ggthemes)
 | geom_bar()       | bar chart    |
 | geom_col()       | column chart |
 
-Using the packages above, the following plots were made in R Studio:
+Using the packages above, the following plots were made in R Studio. For an example of how the demographic profile can be used, let's analyze Grundy Center. Mentioned above, Grundy Center has the lowest housing conditions of our three cities.
 
-![](/images/demographics/all_percent_change.png){width="571"}
+::: {layout-ncol="2"}
+![](/images/demographics/all_percent_change.png){width="596"}
 
-![](/images/demographics/pop_projection_cities.png){width="571"}
+![](/images/demographics/pop_projection_cities.png){width="596"}
+:::
+
+Grundy Center has a percent population change of 7.70%, which is right alongside the percent population change of the state of Iowa and the Midwest. Interestingly, New Hampton has a negative percent change, and Independence has a fairly stable population change. The growth rate of Grundy Center is not reflected in its housing quality.
+
+The population projection plot shows Grundy Center is the smallest of our three communities. Its size may explain the housing quality issue. Smaller communities usually have a smaller tax base and less money to fund neighborhood improvements.
 
 ![](/images/demographics/home_ownership.png){width="571"}
 
+Grundy Center has a much higher home ownership rate than either New Hampton or Independence, which has been consistently higher for the past five years. Grundy Center's home ownership rate has been higher than all three contextual areas -- Iowa, the Midwest, and the United States- for our collected data. Home ownership rates are not reflected in housing quality.
+
 ![](/images/demographics/median_income.png)
+
+Unlike New Hampton and Independence, Grundy Center's median income is on par with its contextual areas. The median income surpassed the national median in 2019 and has stayed higher. Income is not a problem in Grundy Center.
 
 ![](/images/demographics/median_value.png)
 
+Grundy Center's median home value has wavered over the years. In 2009, Grundy Center had the lowest median home value of our communities. It has since risen to have the highest median home value. The median home value is significantly lower for all three communities than the contextual areas.
+
 ![](/images/demographics/value_and_year_built.png){width="522"}
 
-Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations
+The houses in our three communities are aged compared to the contextual areas. Iowa has a high percentage of older houses, and this shows in our communities. Grundy Center has the youngest houses and even has a house or two built in 2020 or later. All three cities are missing the increase of houses built from 2010 to 2019, but Grundy Center has the largest percentage of houses built in that time frame.
+
+Grundy Center is close to the Cedar Falls-Waterloo metropolitan area, which could explain the low housing quality and high growth rate, median income, and housing value. There may be demand for housing in the community, and residents may be traveling outside the city for work.
+
+**Other Visualizations**
+
+Using the Infographics feature on ArcGIS Pro, we also created community summaries of Grundy Center, Independence, and New Hampton. These visualizations are a way that communities can gather demographic data quickly and efficiently themselves. The community summary is a base template, but custom demographics can be used.
 
 **Grundy Center**
 
@@ -469,11 +487,7 @@ Using the Infographics feature on ArcGIS Pro, we also created community summarie
 
 ![](/images/new_hampton_community_summary.png){width="703"}
 
-To make a community summary infographic you can check [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday){target="_blank"} for a guide.
-
-3.  Key findings and insights. 
-
-4.  Interpretation of demographic patterns and their implications. 
+To make a community summary infographic you can click [here](https://kailynhogan.github.io/Kailyn_Hogan_DSPG_Blog/posts/Week_7/Week_7.html#monday){target="_blank"} for a guide.
 
 ### Collecting Data to Identify Study Communities
 
@@ -483,19 +497,19 @@ The following demographic data was collected:
 
 -   **Age**
 
-    The age of a community's population can be very telling of its growth. Communities that have a higher percentage of their population over the age of sixty-five than their population under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.
+    The age of a community's population can tell its growth. Communities with a higher percentage of their population over the age of sixty-five than those under eighteen could have issues with the younger generations moving away. A high median age could indicate the same issue.
 
--   **Population Size**
+-   **Population size**
 
-    Specifically, we were looking for communities with a population between 500 and 10,000. Communities with smaller populations are this project's main focus. We were particularly interested in any communities that had a declining population as that can indicate it is struggling.
+    Specifically, we were looking for communities between 500 and 10,000. Communities with smaller populations are this project's main focus. We were particularly interested in any communities with a declining population, as that indicates it is struggling.
 
 -   **Housing**
 
-    A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community, and the community is not growing.
+    A low median house value and high median house age can indicate a struggling community. A high median house age can reveal that new housing is not being built in the community and the community is not growing.
 
 -   **Occupancy rates**
 
-    Communities with low home ownership rates and high vacancy rates could have issues and be struggling. There is little room for community investment if residents cannot afford to buy their own homes.
+    Communities with low home ownership and high vacancy rates could have issues and need help. There is little room for community investment if residents cannot afford to buy their own homes.
 
 -   **Income**
 
@@ -505,9 +519,11 @@ The following demographic data was collected:
 
     Employment statistics are important because there will only be money to invest in a community if people are employed. The percentage of the workforce that commuted to work gives information on where jobs are located. If people are commuting, there are not enough jobs in town. People also tend to move to where jobs are.
 
-We were able to start the visualization process in Tableau for the population data. From this visualization we can pin point the communities in Iowa that have a concerning growth rate and population size.
+We started the visualization process in Tableau for the population data. From this visualization, we can pinpoint Iowa communities with a concerning growth rate and population size.
 
-\[insert viz\]
+**insert viz**
+
+The plot above is filtered to only show communities in Iowa with a population between 500 and 10,000. The communities that fall below average for percent population change and population size are potential study communities for our project. Further analysis of the other demographic data is required because many communities fall into this category, but this is a good start.
 
 ## Conclusion
 
@@ -528,6 +544,10 @@ Research questions to be considered for Year 2 of this project;
 -   Could we create AI model that can identify houses, trees, sidewalks and evaluate roof condition when given an image of a neighborhood?
 
 ![](/images/drone_to_GIS.png)
+
+### **Future work that Chris needs to complete:**
+
+![](/images/chris_todo.png)
 
 ## Recommendations
 
