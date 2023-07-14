@@ -285,7 +285,7 @@ Click [here](https://gavinfishy.github.io/Gavin_DSPG_Blog/posts/Gavin-Fisher_gui
 
 A spider is an automated version of web scraping that automatically goes page by page on a website. A spider reduces manual involvement in the scraping process and makes it more efficient.
 
-Aaron Case, our friend on the AI Grocery Team, built us a spider to scrape Vanguard data. We were able to grab the following information from Vanguard:
+Aaron Case, our friend on the AI Local Foods team, built us a spider to scrape Vanguard data. We were able to grab the following information from Vanguard:
 
 -   Parcel number
 
@@ -379,7 +379,7 @@ We developed a demographic profile of the three WINVEST cities - Grundy Center, 
 
 The following demographic data were used for the demographic profile of the communities:
 
--   Population.
+-   Population
 
 -   Median income
 
